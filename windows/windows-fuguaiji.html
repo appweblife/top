@@ -1,0 +1,328 @@
+<html>
+
+<head>
+    <title>Windows不具合の対応のしかた</title>
+    <LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+    <meta charset="utf-8">
+    <meta name="description" content="「システムの復元」や「リカバリー」、「セーフモード」について">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=”author” content=”komai”>
+
+</head>
+
+<body>
+
+    <h1>【Windows】不具合の対応<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80" class="tpg">
+    </h1>
+    <ul>
+        <li class="pn"><a href="../index.html" target="_blank">web制作、webライフ</a> &gt;</li>
+        <li class="pn">Windows不具合の対応</li>
+    </ul>
+    <!--フロート右寄せ-->
+    <div class="b">
+        <P class="ch">
+            <script type="text/javascript">
+                <!--
+                var weeks = new Array('日', '月', '火', '水', '木', '金', '土');
+
+                var lastup = new Date(document.lastModified);
+
+                var year = lastup.getFullYear(); // 年
+                var month = lastup.getMonth() + 1; // 月
+                var day = lastup.getDate(); // 日
+                var week = weeks[lastup.getDay()]; // 曜日
+
+                if (year < 2000) {
+                    year += 1900;
+                }
+
+
+                // 表示開始
+                document.write('更新日：' + year + '年' + month + '月' + day + '日');
+                // 表示終了
+
+                // 
+
+                -->
+            </script>
+        </P>
+    </div>
+    <div class="cl">
+        <IMG src="../pic/pc_komaru-mini.png" alt="困る">
+        <h2>目次</h2>
+        <div class="flco">
+            <a href="../bios-uefi.html" target="_blank">
+                <div class="flei">
+                    BIOS/UEFIのとこへ
+                    <br>
+                    <img src="../nai-link.gif">
+                </div>
+            </A>
+            <A href="#fukugen">
+                <div class="flei">
+                    システムの復元
+                    <br>
+                    のとこへ
+                    <br>
+                    <img src="../nai-link.gif">
+            </A>
+        </div>
+        <a href="installmedia.html" target="_blank">
+
+            <div class="flei">
+                インストールメディア
+                <br>
+                のとこへ
+                <img src="../nai-link.gif">
+
+        </A>
+    </div>
+    <a href="kaifukumedia.html" target="_blank">
+
+        <div class="flei">
+            回復ドライブ
+            <br>
+            のとこへ
+            <img src="../nai-link.gif">
+            <br> <IMG src="../newbana.gif">
+    </A>
+    </div>
+    <A href="#recovery">
+        <div class="flei">
+            リカバリー
+            <br>
+            のとこへ
+            <br>
+            <img src="../nai-link.gif">
+    </A>
+    </div>
+    </div>
+
+    <h2>パーティション</h2>
+    <p class="kt">
+        記憶領域の仕切りのこと
+    </p>
+    パーティション分割。ひとつのHDDに4つまでパーティションは可能
+    <div class="cc">
+        回復パーティション
+    </div>
+    <h3>ディスクの管理</h3>
+    <p class="kt">
+        パーティション管理、分割。WindowsでのHDDの状態を確認できる。外付けHDDなども表示されます。
+        <br>
+        ディスク全体の容量、パーティションの数を確認できます。
+    </p>
+    <ol class="yohaku-dai">
+        <li>
+            左下<b>「Windowsマーク」を右クリック</b></li>
+        <li>
+            <img src="../pic/disk-kanri2.jpg" alt="ディスクの管理" width="252" height="252">
+            　<b>「ディスクの管理」をクリック</b>
+        </li>
+    </ol>
+
+    <div class="cc">
+        プライマリパーティション
+    </div>
+    <h2>エクスプローラー</h2>
+    <p class="kt">
+        ファイルを管理するアプリケーション
+    </p>
+    <b>[Windowsキー]</b>+<b>[Eキー]</b>
+    <h3>エクスプローラーが応答しない</h3>
+    <ol class="yohaku">
+        <li>
+            <b>[タスクマネージャー]</b>
+        </li>
+        <li><b>[エクスプローラー]</b>を右クリック</li>
+        <li><b>[再起動]</b>をクリック</li>
+    </ol>
+    <h2>バックアップ</h2>
+
+
+    <h2>チェックディスク</h2>
+    Windowsに標準搭載されています。エラー修復機能。ただしデータが消失する可能性もある。
+    <p>
+        <b>「Windowsキー」</b>+<b>「Xキー」</b>
+    </p>
+    <h2>Ｃドライブの移転</h2>
+
+    <h3>EaseUS Todo Backup</h3>
+    OS移転。フリーソフト
+    <h2>デフラグ</h2>
+    <h2>論理障害　物理障害</h2>
+    <h2>セーフモード</h2>
+    正常に起動しない時など最低限の機能で起動させる方法
+    <br>
+    セーフモードで起動すると画面四隅に「セーフモード」と表示されます。
+    <p class="kt">
+        電源を入れると同時に[F8キー]を連打
+    </p>
+    <h2 id="fukugen">システムの復元</h2>
+
+    <p class="kt">
+        Windows10はシステムを定期的に記録していている「復元ポイント」というものがあります。
+    </p>
+    Windows10では、<span class="aaa">システムの保護を有効にしているドライブは、復元ポイントが自動作成されます</span>が、
+    <br>
+    手動でシステムの復元ポイントを作成できます。
+    <br>
+    復元ポイントを作成しておくと、Windowsが正常動作しなくなっても復元できる可能性があります。
+    </p>
+    Windows10不具合の直前<span class="aaa">復元ポイントに戻れば、不具合以前の状態に Windows10を戻すことができます。</span>
+
+    <div class="cc">
+        <span class="dai">手動での復元ポイント作成</span>
+        <ol class="yohaku">
+            <li>
+                <b>[コントロールパネル] </b> → <b>[システム]</b>
+                <br>
+                <IMG src="../pic/controlpanel-system.jpg" alt="コントロールパネルシステム" width="1000" height="1000" class="ue-ake">
+
+            </li>
+            <li>
+                <b>[システムの保護]</b>
+                タブをクリック
+                <br>
+                <IMG src="../pic/fukugen.jpg" alt="システム復元" width="200" height="200">
+            </li>
+            <li>
+                →<span class="aaa">「保護設定」欄から<b>「作成」</b></span>をクリックします。
+                <br>
+                <IMG src="../pic/system-fukugen-mini.jpg" alt="システム復元確認" width="460" height="460" class="ue-ake">
+            </li>
+
+            <li>
+                <b>「復元ポイントの作成」</b>という画面が表示され、
+                自分の分かりやすい文字説明を入力後<b>「作成」</b>をクリックします。
+                <br>
+                <IMG src="../pic/fukugen-sakusei3.jpg" alt="復元入力" width="340" height="200" class="ue-ake">
+            </li>
+        </ol>
+    </div>　
+    <div class="cc">
+        <span class="dai">復元ポイント確認</span>
+        <ol class="yohaku">　
+            <li><b>「コントロールパネル」</b>→
+                <b>「システム」</b>
+                <br>
+                <IMG src="../pic/controlpanel-system.jpg" alt="コントロールパネルシステム" width="1000" height="1000" class="ue-ake">
+
+            </li>
+            <li>
+                <b>[システムの保護]</b>
+                タブをクリック
+                <br>
+                <IMG src="../pic/fukugen.jpg" alt="システム復元" width="160" height="160">
+            </li>
+
+            <li>→<b>「システムの復元」</b>をクリックすると、
+                作成されている復元ポイントを確認できます。</li>
+        </ol>
+        <IMG src="../pic/fukugen-kakunin-mini.jpg" alt="システム復元確認" width="460" height="460">
+
+    </div>
+    <div class="cc">
+        <span class="dai">復元やり方</span>
+        <ol class="yohaku">
+            <li>
+                <b>コントロールパネル</b> → <b>システム</b>
+                <br>
+                <IMG src="../pic/controlpanel-system.jpg" alt="コントロールパネルシステム" width="1060" height="1060" class="ue-ake">
+
+            </li>
+            <li>
+                <b>[システムの保護]</b>
+                タブをクリック
+                <br>
+                <IMG src="../pic/fukugen.jpg" alt="システム復元" width="160" height="160">
+            </li>
+            <li>
+                →<b>「システムのプロパティ」</b>→<b>「システムの保護」</b>タブをクリックし、
+            </li>
+            <li>
+                <span class="aaa">→「システムの復元」欄から<b>「システムの復元」</b></span>をクリックします。
+            </li>
+            <li>
+                →<b>「システムの復元」</b>が表示されます。「次へ」をクリックします。
+            </li>
+            <li>
+                →戻したい復元ポイントを選択し「次へ」をクリックします。
+                <br>
+                <IMG src="../pic/fukugen-point.jpg" alt="復元ポイント" width="460" height="460" class="ue-ake">
+
+            </li>
+            <li>
+                →「復元ポイントの確認」という画面が表示されます。
+                内容を確認し「完了」をクリックします。
+            </li>
+            <li>
+                システムの復元が完了すると、自動的にパソコンが再起動します。
+            </li>
+        </ol>
+    </div>
+    <h2>PCが重い</h2>
+    <H3>ディスクのクリーンアップ</H3>
+    <ol class="yohaku">
+        <li>
+            Cドライブを右クリック</li>
+        <li>プロパティ</li>
+        <li>右下にある「ディスクのクリーンアップ」をクリック</li>
+
+    </ol>
+
+    <h2>リモートプロシージャーコール</h2>
+    リモートプロシージャーコールに失敗し実行されませんでした。
+    →とりあえず再起動
+    <h2>ファイル検索</h2>
+    インデックス
+    <H3>
+        検索条件に一致する項目はありません</H3>
+    <span class="dai2">トラブルシューティングツール</span>
+    <span class="dai2">インデックスを再構築</span>
+    時間がかかります。
+    <h2>CapsLockキーがオンになっています</h2>
+    サインインできない場合
+    <p>
+        キーボードの
+        <span class="aaa">[Shift]と[CAPSLOCK]を同時に押す</span>。
+    </p>
+    <h2>パラメーターが間違っています</h2>
+    HDD
+    <H3>TestDisk</H3>
+    フリーソフト
+    　Windows、マック、Linuxに対応。パーティションの復旧。
+    <a href="https://www.cgsecurity.org/wiki/TestDisk_Download" target="_blank">
+        TestDiskダウンロード<IMG src="../banako.gif">
+    </a>
+    <h2>PC内部の掃除</h2>
+
+    <h2 id="recovery">リカバリー</h2>
+    リカバリーとは<b>初期化</b>のこと
+    <H3>リカバリーメディアの作成</H3>
+    USBメモリ等で作成。
+    <span class="aaa">Windows10では<b>32GB以上</b>のUSBメモリが必要</span>。
+    <div class="cc">
+        <span class="dai">
+            方法1</span>　コントロールパネル
+        <br>
+        → バックアップと復元（Windows7)
+        <br>
+        →左側にある「システム修復ディスクを作成」をクリック
+    </div>
+    <div class="cc">
+        <span class="dai">
+            方法2</span>　［コントロールパネル］→［セキュリティとメンテナンス］→［回復］
+        <br>
+        →［回復ドライブの作成］
+    </div>
+    <a href="#top">
+        <!aタグでアイコンを囲む>
+            <IMG src="../icon/button.png" alt="上へボタン" width="52" height="52" class="tp">
+    </a>
+    <P align="center"><IMG src="../pcjoshi.png">
+    </P>
+
+</body>
+
+</html>
