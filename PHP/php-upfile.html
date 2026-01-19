@@ -1,0 +1,123 @@
+<html>
+<head>
+
+<title>【PHP】ファイルアップロード</title>
+<meta charset="utf-8">
+<meta name="description" content="「move_uploaded_file 」、「テンポラリファイル」や
+PHPとHTMLを使用したファイルアップロードについて">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+</head>
+
+<body>
+<h1>【PHP】ファイルアップロード<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg">
+</h1>
+
+  <p class="ch">
+<script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+if(year < 2000) { year += 1900; }
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日');
+// 表示終了
+
+// -->
+</script></P>
+<ul>
+<li class="pn"><a href="../index.html"target="_blank">web制作・webライフ</a>&gt;</li>
+<li class="pn">【PHP】ファイルアップロード</li>
+</ul>
+<h2>PHPでの書き方</h2>
+
+アップロードされた一時的なファイル名(テンポラリファイル)とサーバーに置くファイル名と2つある。
+<div class="cc" >
+<span class="dai">「$_FILE」</span>　<B>スーパーグローバル変数。</B>　<span class="aaa">HTTP POST でアップロードされた値を収納する。
+</p>
+
+</p>
+<span class="aaa">アップロードされたファイルは、「テンポラリファイル」として<B>$_FILE[ パラメータ名 ][ tmp_name ]</B>に、
+  <BR>
+    一時的に保存される</SPAN>が、PHPスクリプト終了時に削除されるため正規の場所へ収納する。
+</div>
+<div class="cc" >
+<span class="dai">「move_uploaded_file 」</span>
+<UL>
+<LI>
+  <span class="aaa">アップロードされたファイルを移動する関数。</SPAN></LI>
+  <BR>
+    <LI>「テンポラリファイル」を正式な収納場所にコピーする
+      <BR>
+    <span class=sample>[ tmp_name ]</span>　テンポラリファイル名。<span class="aaa">アップロードされたファイルが一時的に保存されるファイルパス</SPAN></LI>
+    <BR>
+<LI><span class="aaa"><b>「第1引数」</b>でHTMLフォームからアップロード時に付けられたファイル名、
+<br>
+  <b>「第2引数」</b>でサーバに置くファイル名をそれぞれ指定します。</SPAN></LI>
+
+
+</UL>
+</div>
+
+<p class="kt">
+move_uploaded_file($_FILES['HTMLフォームから送られたデータ']['tmp_name'], '正式な格納場所')
+</p>
+<span class=orj>外部リンク参考サイトさん</span>
+<a href="http://ponk.jp/php/basic/form" target="_blank">ファイルアップロード方法</a>
+  <h3>if文</h3>
+<div class="cc" >
+<span class="dai">if～else文</span>
+<p class="kt">
+if (　) { 　} else { 　 }
+</p>
+ifの後にmove_uploaded_file（　）とする
+<p class="kt">
+if (move_uploaded_file($_FILES['フォームから送られたデータ']['tmp_name'], '正式な格納場所'))
+</p>
+  <p>
+<B>echo '正式な画像格納場所';</B>　でブラウザに出力　IMG src="画像のアドレス"
+</p>
+
+ファイルがない時の表示をelse以下で記述。
+<p class="kt">
+  else {echo "ファイルを選択してください。"; }
+</p>
+if～elseif～else文を使う
+</DIV>
+
+<h2>HTMLでの書き方</h2>
+<div class="cc" >
+  <span class="dai">htmlファイル</span>
+
+<OL>
+<LI><b>formタグ</b>　formタグの<B>action'　'に送信先（PHPファイル）、method を' post' </B>にし（必須）
+  <BR>
+  <span class="aaa">enctype="multipart/form-data"</span>にする
+  <br>
+<span class="aaa">form method="post" action="送信先" enctype="multipart/form-data"  /form</SPAN>　/formで閉じる。
+</LI>
+<BR>
+<LI><b>アップロード</b>　input type="file"にてアップロード欄作成、PHPに送るデータ名をname で指定。</LI>
+<BR>
+<LI>input type="submit"で送信ボタン作成</LI>
+</DIV>
+<a href="#top"><!aタグでアイコンを囲む>
+  <IMG src="../icon/button.png"alt="上へボタン"width="52" height="52" class="tp">
+</a>
+
+<P align="center"><IMG src="../pcjoshi.png"alt="楽しくpc" >
+</P>
+
+
+</body>
+</html>

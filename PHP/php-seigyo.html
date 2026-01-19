@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<title>制御構造について</title>
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+  <meta charset="utf-8">
+<meta name="description" content="制御構造、IF,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name=”author” content=”koma”>
+</head>
+
+<body>
+<h1>制御構造について<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+<ul>
+<li class="pn"><a href="../index.html"target="_blank">web制作・webライフ</a>&gt;</li>
+<li class="pn">制御構造について</li>
+</ul>
+<P class="ch">
+  <script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getFullYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日');
+// 表示終了
+
+// -->
+</script></P>
+<HR color="white"ize="5"><HR color="blue">
+<p class="kt fir">すべてのプログラムは<b>「順次実行」「分岐実行」「繰り返し実行」を組み合わせ</b>て成り立っています。
+</p>
+<div class="cc" >
+  <span class="dai">if文</span>
+  if文には3つの種類があります。
+<UL>
+    <LI>ifのみ</LI>
+    <LI>if〜else文</LI>
+    <LI>if〜elseif〜else文</LI>
+  </UL>
+<p>
+<B>if (条件式) {
+  条件式がTRUEのときの処理
+}</B>
+</p>
+<p>
+<B>if (条件式) {
+  条件式がTRUEのときの処理
+} else {
+  条件式がFALSEのときの処理
+}</B>
+</p>
+<B>if (条件式1) {
+  条件式1がTRUEのときの処理
+} else if (条件式2) {
+  条件式1がFALSEで、<BR>なおかつ条件式2がTRUEのときの処理
+} else {
+  条件式1がFALSEで、なおかつ条件式2もFALSEのときの処理
+}</B>
+  </DIV>
+
+<div class="cc" >
+ <span class="dai"> while文</SPAN>
+
+<p class="kt">while (条件式) {条件式がTRUEのときの処理}
+    <BR>
+while (条件) {繰り返す内容}
+</p>
+<span class="aaa"><B>$count++;</B>を使う</SPAN>等して、whileを使う場合、必ずいつか条件式がFALSEになるようにする。
+<BR>
+そうしないと永久ループになりブラウザがクラッシュする可能性があります。
+</DIV>
+<span class="orj">外部リンク参考サイトさん</span>
+　<a href="http://www.phppro.jp/school/phpschool/vol5/2" target="_blank">while文とforeach文</a>
+
+<h2>foreach文</h2>
+
+ひとつ、ひとつ処理をするのが大変なため、<span class="aaa">まとめて配列にして処理する</SPAN>
+<p class="kt fir">
+foreach文は配列用の反復処理文　ループは配列の中にある箱の数(キーの数)だけ行われます。
+    </p>
+<span class="orj">外部リンク参考サイトさん</span>    <a href="http://ponk.jp/php/basic/syntax2" target="_blank">foreach文について</a>
+<div class="cc" >
+  <p class="kt">
+foreach (配列 as 値をいれる変数) { 繰り返し行う処理 }
+      <br>
+foreach (配列 as 配列キー => 配列の値) { 繰り返す内容}
+</p>
+<B>table border="　"とすることで、表に枠をつけ、thタグで見出し作成し、その中にforeach文</B>
+          <BR>
+table border="　"　　tr　　th見出し/th　　/tr
+</DIV>
+
+
+  <h2>exit文</h2>
+<p class="kt fir">
+  exit文はHTMLを含めて全スクリプトの出力を終了する
+</p>
+<div class="cc" >
+<UL>
+  <LI><B>exit;</B></LI>
+  <LI><B>exit ('文字列');</B>　statusが文字列の場合は、終了直前にstatus内容を表示します。</LI>
+  <LI><B>exit (0);</B>　statusが数値の場合は、表示されません。</LI>
+  </UL>
+</DIV>
+
+<P align="center">
+  <IMG src="../pcjoshi.png"alt="楽しくpc" >
+</P>
+<a href="#top">
+<IMG src="../icon/button.png" class="tp">
+</a>
+</body>
+</html>

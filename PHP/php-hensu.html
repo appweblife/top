@@ -1,0 +1,105 @@
+<html>
+<head>
+
+<title>PHP変数</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+</head>
+
+<body>
+<H1>PHP変数<IMG src="../kingyobachimini.png" ></h1>
+  <P class="ch">
+    <script type="text/javascript">
+  <!--
+
+  var weeks = new Array('日','月','火','水','木','金','土');
+
+  var lastup = new Date(document.lastModified);
+
+  var year = lastup.getFullYear(); // 年
+  var month = lastup.getMonth() + 1; // 月
+  var day = lastup.getDate(); // 日
+  var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+  // 表示開始
+  document.write('更新日：' + year + '年' + month + '月' + day + '日');
+  // 表示終了
+
+  // -->
+  </script></P>
+
+<H3>変数</h3>
+<p class="kt fir">
+変数とは、データを保管するいれもの
+</p>
+変数名は<b>「$」</b>からはじまります。
+<div class="cc" >
+  1文字目は必ず『$』
+  <BR>
+<b>2文字目にアルファベットの小文字・大文字、アンダーバー（数字はNG）</b>。
+<br>
+3文字目以降には、数字、アルファベットの小文字・大文字、
+<BR>
+アンダーバーが利用できます。
+<br>アルファベットの小文字と大文字は区別
+<P>
+<B>文字列は「"」や「'」で囲み、数値は囲まない</B>
+</P>
+</DIV>
+<p class="kt">
+echo 変数名;(セミコロン) と記述することで変数の中身をブラウザに表示することができる。
+</P>
+
+<span class="aaa">代入演算子「=」を使用して変数に値を代入すると、変数の宣言と値の代入が同時に行われます。</span>
+<br>変数宣言のない変数はNULL値（値が認識できないこと）
+<span class="aaa">変数のスコープとは宣言された変数がコード中の何処まで影響を及ぼすかという範囲のこと</span>。
+<br>一度宣言された変数が何処でも使用できるという訳ではありません。
+<br><span class="aaa">変数が宣言された場所とその変数の有効範囲が決められており、それが変数のスコープ。</span>
+
+
+
+<H3>$_FILES(ファイルアップロード変数)</h3>
+<p class="kt">
+PHPの定義済み変数(=スーパーグローバル変数)の1つ
+<BR>
+HTTP POST でアップロードされた値を取得し収納するファイルアップロード変数
+</p>
+<div class="cc" >
+  <span class="dai">収納されるデータ</span>
+['name']：ファイル名<BR>
+['type']：ファイルのMIMEタイプ<BR>
+['tmp_name']：一時保存ファイル名<BR>
+['error']：アップロード時のエラーコード<BR>
+['size']：ファイルサイズ（バイト単位）
+<P>
+例）$_FILES['ファイル名']['tmp_name']
+</P>
+</DIV>
+<p class="kt">
+二次元配列になっているので、２つのキーで呼び出す。
+</p>
+  <span class="aaa">
+  <B>１つ目のキー</B>は、フォーム部品のファイル送信欄のname属性値。
+  <BR>
+    <B>２つ目のキー</B>は、name、type、size、tmp_name、errorのいづれか。</SPAN>
+ 
+
+<H3>$_SERVER（サーバ変数）</h3>
+  <p class="kt">
+ブラウザ情報やIPアドレスなどのサーバの情報にアクセスできる変数。スーパーグローバル変数
+</p>
+<span class="orj">外部リンク参考サイトさん</span>
+  <a href="http://php-beginner.com/practice/server_var/" target="_blank">$_SERVERについて</a>
+
+
+  <P align="center"><IMG src="../pcjoshi.png" ></P>
+  <a href="#top">
+  <IMG src="../icon/button.png"alt="上へボタン"width="52" height="52" class="tp">
+  </a>
+
+<HR color="white"ize="5"><HR color="blue">
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<title>PHPきほん、変数、関数など-web制作・webライフ　気楽にチャレンジ・いろいろ確認！</title>
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+  <meta charset="utf-8">
+  <meta name="description" content="phpの基本の書き方、変数、関数など。">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name=”author” content=”koma”>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1S5ZLCQ35K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1S5ZLCQ35K');
+</script>
+
+<body>
+<h1>PHPきほん<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+<ul>
+<li class="pn"><a href="index.html"target="_blank">web制作・webライフ</a>&gt;</li>
+<li class="pn">PHPきほん</li>
+</ul>
+<P class="ch">
+  <script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getFullYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日');
+// 表示終了
+
+// -->
+</script></P>
+<h2>目次</h2>
+<div class="flco">
+<div class="flei">
+<a href="php-hensu.html" target="_blank">
+  PHP変数　
+説明や書き方
+<BR>
+  スーパーグローバル変数
+  <BR>
+    について
+    <BR>
+  <IMG src="../nai-link.gif" >
+</a>
+</div>
+<div class="flei">
+<A href="#php-kansu">
+  php関数
+<br>
+いろいろな関数
+<br>
+について
+<br>
+  <IMG src="../nai-link.gif" >
+</a>
+</div>
+<div class="flei">
+<A href="#php-hairetu">
+  配列
+<br>
+書き方など
+<br>
+について
+<br>
+  <IMG src="../nai-link.gif" >
+</a>
+</div>
+</div>
+<h2>できること</h2>
+<p>
+  IDとパスワードを使った"ログイン認証"や"お問い合わせフォーム"、"掲示板"など
+  </p>
+   <br>
+  <span class="orj">外部リンク参考サイトさん</span>
+<p><a href="http://webkaru.net/php/basic-syntax/" target="_blank">PHP書き方（ややおもい）</a>　　
+<a href="http://www.php-labo.net/tutorial/php/" target="_blank">PHP書き方（シンプル）</a>
+　<a href="http://www.phppro.jp/school/" target="_blank">PHP入門</a>
+　<a href="http://webings.net/php/" target="_blank">PHPプログラム集</a>
+　<a href="http://www.phppro.jp/school/phpschool/#session2" target="_blank">プログラム（スケジューラー作成）</a></P>
+
+<h2>PHP基本書き方</h2>
+<UL>
+  <LI>HTMLと混在して書くことができる</LI>
+  <br>
+<LI>PHPスクリプトは<span class="aaa"><b>開始タグ php からはじまり、終了タグ で終わります。</b>開始タグと終了タグの間にPHPスクリプトのコードを記述します。</SPAN></LI>
+  <br>
+<LI><b>各コード、命令の最後にセミコロン「;」、命令の間を「半角スペース」「タブ」「改行」で区切る必要があります。</B>。　
+  <br>ただし、<span class="aaa">セミコロンは「命令の区切り」なので、<b>命令が一つの場合や最後の場合</b>はセミコロンが無くても動作します。</span></LI>
+<br>
+<LI><span class="aaa"><B>PHPでhtmlタグは「文字列」として扱われます。文字と同様、クォートが必要になります。</B></SPAN></LI>
+<br>
+<li><span class="aaa">空白や 改行 は無視されます。</span>空白や改行をどんなに記述してもPHPでは無視されます。</li>
+  </UL>
+
+<div class="cc" >
+  <span class="dai">改行</span>
+    <span class="aaa"><span class="utn">文字の改行</span>を行う場合は、 brタグ</span>を記載。
+    <p>
+ブラウザはHTMLを解釈して表示するので、ブラウザ上で改行するにはHTMLのbrタグが必要。
+</p>
+<span class="aaa">HTMLタグなので「文字列」として扱われます。他の文字と同様、クォートが必要になります。
+</SPAN>
+<P>
+<span class="orj">外部リンク参考サイトさん</span>
+　<a href="http://php-beginner.com/reference/basic/linefeed.html" target="_blank">改行について</a>
+</P>
+  </DIV>
+  <div class="cc" >
+  <span class="dai">文字コード</span>
+文字コードは UTF-8 にしておく。<span class="aaa">文字コード UTF-8 でファイルを作成</span>。
+<br>
+UTF-8 は Unicode という文字コードの一つ。
+    <p>
+<span class="sample">  「Unicode」</span>世界中の文字を共通の文字コードで利用できるようにするための規格。
+</p>
+</div>
+
+</UL>
+<div class="cc" >
+<span class="dai">コメント</span>
+ <span class="aaa">/*から*/で囲まれた部分はコメントとなり表示されません。</span>
+    <p class="kt">
+   <span class="aaa">「//」と「#」は後ろ1行分をコメントとして扱います</span>。
+<BR>
+   スクリプトの内容をわかりやすくするために「コメント」を書きましょう。
+</p>
+  </div>
+  <h2 id="php-kansu">関数</h2>
+
+  <p>
+    <span class="aaa">関数とはPHPで処理をする命令のこと</span>。たくさん種類がある。
+      <p class="kt fir">
+      関数に渡す情報が引数（パラメータ）で、それを関数が処理して戻り値という情報を返す
+      </p>
+
+   <span class="sample">内部関数（ビルトイン関数）</span>PHPに<span class="aaa">あらかじめ用意されている</span>関数
+   <p>
+   <span class="orj">外部リンク参考サイトさん</span>
+   <a href="http://web-dev.xyz/php-create-function/" target="_blank">関数、引数</a>　
+ </p>
+<h3>いろいろな関数</h3>
+
+  <p>
+  <span class=sample>htmlspecialchars関数</span>　XSS（クロスサイトスクリプティング）対策としてHTML特殊文字をHTMLエンティティに変換する。
+    <BR>
+      フォームから送られてきた値や、データベースから取り出した値を安全にブラウザに表示する際に使用します。
+  </p>
+  <span class=sample>isset関数</span>　変数がセットされていること、そして NULL でないことを検査する　　
+        <BR>
+  <span class=sample>empty関数</span>　 変数が空であるかどうかを検査する
+  <p>
+  <span class="orj">外部リンク参考サイトさん</span>
+  <a href="https://php1st.com/1402/" target="_blank">issetとemptyについて</a>
+</p>
+  <span class=sample>nl2br関数</span>　改行が含まれる文字列を表示させる。文字列が改行される。
+  <h2 id="php-hairetu">配列</h2>
+  <p>
+  変数には1つの値しか保存できませんが、<span class="aaa">配列を使用すれば複数の値を保存することができます。</span>
+  </p>
+  <div class="cc" >
+  <span class="dai">具体的な書き方</span>
+  <p>
+     配列名の最初に $ を付け、さらに [　　] 内に番号をつけて区別。
+   </p>
+     <b>1文字目にアルファベットの小文字・大文字（数字はNG）、アンダーバー</b>。
+  <br>
+     2文字目以降には、数字、アルファベットの小文字・大文字、アンダーバーが利用できます。
+   </div>
+  <div class="cc" >
+  <span class="dai">連想配列</span>
+  <p class="kt fir">
+    文字列をキーにした配列のこと
+  </p>
+  <span class="aaa">文字列なので、「"」（ダブルクォーテーション）もしくは「'」（シングルクォーテーション）囲む。</span>
+  </div>
+  <span class="orj">外部リンク参考サイトさん</span>
+  <a href="http://www.php-labo.net/tutorial/php/array.html" target="_blank">配列と関数</a>
+  <p>
+    <span class="sample">array関数</span> 配列をつくる命令
+  </p>
+<P align="center">
+  <IMG src="../pcjoshi.png"alt="楽しくpc" >
+</P>
+<a href="#top">
+<IMG src="../icon/button.png" class="tp">
+</a>
+<HR color="white"ize="5"><HR color="blue">
+
+</body>
+</html>

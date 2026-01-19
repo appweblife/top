@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<title>演算子について</title>
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+  <meta charset="utf-8">
+<meta name="description" content="【論理演算子】やいろいろな演算子">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name=”author” content=”koma”>
+</head>
+
+<body>
+<h1>演算子について<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+<ul>
+<li class="pn"><a href="index.html"target="_blank">web制作・webライフ</a>&gt;</li>
+<li class="pn">演算子について</li>
+</ul>
+<P class="ch">
+  <script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getFullYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日');
+// 表示終了
+
+// -->
+</script>
+</P>
+<h3 >比較演算子</h3>
+<p class="kt">
+左右の値を比較する。
+</p>
+
+  <span class="sample">==</span>　等しい　
+<br>
+  <span class="sample">!=</span>　等しくない
+
+
+<h3 >論理演算子</h3>
+<p class="kt">
+  if文などで条件分岐に使われます。
+</p>
+<div class="cc" >
+<TABLE border="1"cellpadding="8">
+<TR>
+<TH>演算子</TH><TH>使い方</TH><TH>説明</TH></TR>
+<TR>
+<TD>and</TD><TD>$a and $b</TD><TD>$aと$b両方がTRUEならば</TD></TR>
+<TR>
+<TD>&&</TD><TD>$a && $b</TD><TD>$aと$b両方がTRUEならば</TD></TR>
+<TR>
+<TD>or</TD><TD>$a or $b</TD><TD>$aもしくは$bのどちらかがTRUEならば</TD></TR>
+<TR>
+<TD>||</TD><TD>$a || $b</TD><TD>$aもしくは$bのどちらかがTRUEならば</TD></TR>
+<TR>
+<TD>xor</TD><TD>$a xor $b</TD><TD>$aもしくは$bのどちらかがTRUEだけど、両方TRUEではないならば</TD></TR>
+<TR>
+<TD>!</TD><TD>!$a</TD><TD>$aがTRUEでない（FALSE）ならば</TD>
+</TR></TABLE>
+<p class="kt">
+「&&」 は 「and」 よりも優先度が高く、「||」 は 「or」 よりも優先度が高い。
+<p>
+<span class="orj">外部リンク参考サイトさん</span>
+<a href="http://php-beginner.com/reference/operator/logic.html" target="_blank">論理演算子の例と説明</a>
+</p>
+  </div>
+<h3 >結合演算子</h3>
+<p>
+  <span class="sample">結合演算子「.（ピリオド）」</span>  <span class="aaa">変数,文字列をつなぎ合わせる。　変数同士、文字同士、変数と文字との組み合わせがある。</span>
+  <p>
+<span class="sample">結合代入演算子「.=(ドットイコール)」</span><span class="aaa">左辺に右辺を追加</span>
+</p>
+<span class="aaa">$a に 1 を加えたい場合は、'$a++' または '++$a' と書く</SPAN>
+
+<h3>外部リンク参考サイトさん</h3>
+<a href="http://www.flatflag.nir87.com/joinstring-111" target="_blank">・結合演算子「.（ピリオド）」と結合代入演算子「.=(ドットイコール)」の使い方</a>
+　<br>
+<a href="http://qiita.com/trashtoy/items/5c76f3cd8cb636ac3c72" target="_blank">・「.（ピリオド）」と「,(カンマ)」の使い方</a>
+
+<P align="center">
+  <IMG src="../pcjoshi.png"alt="楽しくpc" >
+</P>
+<a href="#top">
+<IMG src="../icon/button.png" class="tp">
+</a>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<html>
+<head>
+  <title>php用語集-web制作・webライフ</title>
+  <LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+    <meta charset="utf-8">
+    <meta name="description" content="HTTP、webサーバーなどの用語を説明しています。">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name=”author” content=”komai”>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1S5ZLCQ35K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1S5ZLCQ35K');
+</script>
+
+<body>
+<header>
+  <h1>PHP用語集<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+
+</header>
+
+<p class="Ch">
+  <script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getFullYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日（' + week + '）');
+// 表示終了
+
+// -->
+</script>
+</P>
+</div>
+<ul>
+  <li class="pn"><a href="../index.html"target="_blank">web制作・webライフ</a> &gt;</li>
+<li class="pn">php用語集</li>
+</ul>
+<h2>基本用語</h2>
+
+<div class="cc">
+<span class=dai>webサーバー</span>クライアント（ブラウザ等）からの要求を受け取り、要求されたHTMLファイルを返す役割。
+  <BR>
+  <span style="background-color:powderblue">クライアントからHTML文書や画像などを送る機能</span>。apache(アパッチ)等がある
+</div>
+<div class="cc">
+<span class=dai>HTTP</span>
+<p class="kt fir">
+クライアント（ブラウザ等）とWebサーバがデータのやり取りをする仕組み。
+<BR>
+「HyperText Transfer Protocol」の略。HTMLを転送する。
+</p>
+クライアント（ブラウザ等）からWebサーバ対して要求の送信、Webサーバからクライアント（ブラウザ等）にHTMLの送信をする。
+  </div>
+  <div class="cc">
+  <span class=dai>HTTPリクエスト</span>
+  <span class="aaa">ブラウザからサーバーへの通信。
+<br>
+  </span>OSやブラウザの種類、現在のページ、クッキー、言語などの情報が送信される
+  </div>
+  <div class="cc">
+  <span class=dai>HTTPレスポンス</span>
+  <span class="aaa">サーバーからWEBブラウザへの通信。</span>
+  <br>
+  ブラウザに表示されるデータ以外に最終更新日などの情報が送信される
+  </div>
+  <div class="cc">
+  <span class=dai>httpヘッダー</span>
+<p class="kt fir">
+  ブラウザとサーバーの通信でやり取りされるデータのうち、ユーザーには直接見えないデータ
+</p>
+</div>
+<div class="cc">
+<span class=dai>静的ページと動的ページ</span>
+<p>
+ウェブサイトの<b>静的なページ（内容が変化しないページ）</b>は、ウェブサーバ上のHTMLファイルの内容が
+<BR>クライアント（ブラウザ等）に送られ、クライアントがそれを解釈して文章や画像を画面に表示します。
+</p>
+    しかし、<span class="aaa">ブログやECサイトといったフォーム等でユーザーとやりとりし、
+      <BR>
+        表示、内容が変わるページの場合、単純なHTMLファイルでは対応できません</span>。
+<BR>
+  そのようなときにPHPなどを使い、<b>ユーザーからのアクションに応じてHTMLを動的に生成</b>します。
+</div>
+<div class="cc">
+<span class=dai>データベース</span>
+<p class="kt fir">
+webシステムでデータを保存する手段のひとつ。
+</p>
+webシステムでは、会員データや記事データなど様々なデータを保存しておく必要があります。
+<BR>
+  データベースを使うと、データの追加・更新・削除などの管理が容易になります。
+<p class="kt fir">
+  データの作成・検索・更新・削除をするには,<b>データ操作言語である<span class="aaa">「SQL」</b>を使う</span>。
+</p>
+</div>
+<h2>やや応用</h2>
+<div class="cc">
+<span class=dai>CGI</span>
+  Common Gateway Interface の略で、<span style="background-color:powderblue">WWWサーバの中で外部プログラムを実行するための仕組み。</span>
+<P>
+<span class="aaa">CGIを用いることにより、掲示板やアクセスカウンタ、アンケートなどの動的なページを作成することができる。</span>
+</P>
+</div>
+<span class=dai3>パーミッション</span>利用者が特定のファイルやディレクトリーに対してもつアクセス権
+
+<span class=dai3>エスケープ シーケンス</span>先頭に円記号 (\) が指定されている、アルファベットや数字で構成される文字の組み合わせ
+<span class=dai3>SQLインジェクション</span>
+SQL文を外部から実行して、データベースに不正にアクセスする攻撃
+
+<a href="#top"><!aタグでアイコンを囲む>
+<img src="./icon/uebutton2.png" class="tp">
+</a>
+<P align="center"><IMG src="../pcjoshi.png" ></P>
+  <a href="#top">
+  <IMG src="../icon/button.png"alt="上へボタン"width="52" height="52" class="tp">
+  </a>
+
+<HR color="white"ize="5"><HR color="blue">
+</body>
+</html>

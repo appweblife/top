@@ -1,0 +1,179 @@
+<!doctype html>
+
+<head>
+
+<title>【PHP】ファイル入出力</title>
+<meta charset="utf-8">
+<meta name="description" content="PHPにおけるfopen関数などファイル入出力やCSVについて書いています">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css-haikei.css" type="text/css">
+<style type="text/css">
+</style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1S5ZLCQ35K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1S5ZLCQ35K');
+</script>
+
+<body>
+<h1>【PHP】ファイル入出力<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+<P class="ch">
+<script type="text/javascript">
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+if(year < 2000) { year += 1900; }
+
+
+// 表示開始
+document.write('更新日時：<b>' + year + '年' + month + '月' + day + '日（' + week + '）');
+
+// 表示終了
+// -->
+</script>
+</P>
+<ul>
+  <li class="pn"><a href="../index.html"target="_blank">web制作・webライフ</a>&gt;</li>
+  <li class="pn">【PHP】ファイル入出力</li>
+  </ul>
+<HR color="white"ize="5"><HR color="blue">
+<h2>基本</h2>
+  <p class="kt">
+ファイルを扱う場合、そのファイルをオープンにする必要があり,
+ <span class="aaa">ファイルをオープンするにはfopen関数</SPAN>を使います。
+ </p>
+ <span class="aaa">ファイルハンドル($fp)からファイルを操作します。</SPAN>
+   <BR>
+<div class="cc" >
+  <span class="dai">基本的な流れ</span>
+<oL>
+    <LI>ファイルを開く　fopen("ファイル名", "モード")</LI>
+    <LI>ファイルから読み込み　fgets(　　) or 書き込み　fwrite( 変数化したファイル, "書き込む内容" ); </LI>
+    <LI>ファイルを閉じる　(fclose)</LI></OL>
+</DIV>
+<DIV CLASS="gibs">
+<span class="skd">外部リンク参考サイトさん</span>
+<a href="http://www.php-labo.net/tutorial/php/file.html" target="_blank">・ファイル入出力</a>　
+<a href="http://ponk.jp/php/file/" target="_blank">・ファイル読み書き</a>
+</div>
+<h2>関数</h2>
+<div class="cc" >
+<span class="dai">fopen 関数</span>
+  <p>
+<B><span class="aaa">引数に「開きたいファイル」と「モード」をそれぞれ指定</SPAN></B>します。
+</p>
+<p class="kt">
+  ファイルポインタ($fp)= fopen("パスを含めたファイル名", "モード")
+</p>
+<p class="kt">
+「ファイルポインタ」は現在ファイルをどこまで読んだか書いたかを表します。
+</p>
+<TABLE border="3"bgcolor="lightcyan"cellpadding="5">
+<TR><Th>モード	</Th><Th>動作　</Th><Th>実際の書き方</Th></TR>
+<TR><TD>"r"	</TD><TD>読み出し専用</TD><TD>$fp = fopen("開きたいファイル", "r");</TD></TR>
+<TR><TD>"w"	</TD><TD>書き込み専用</TD><TD>$fp = fopen("開きたいファイル", "w");</TD></TR>
+<TR><TD>"a"	</TD><TD>追加書き込み専用</TD><TD>$fp = fopen("開きたいファイル", "a");</TD></TR>
+<TR><TD>"r+"	</TD><TD>読み込みと書き込み</TD><TD></TD></TR>
+<TR><TD>"w+"	</TD><TD>書き込みと読み込み</TD><TD>	</TR>
+<TR><TD>"a+"	</TD><TD>読み込みと追加書き込み</TD><TD></TD></TR>
+</TABLE>
+<br>
+ 初期状態では、ファイルポインタはファイルの先頭に設定できます。
+ <p>
+ファイルが正しくオープンされると、ファイルポインタが返される。
+エラーの時は NULLが返される。
+</p>
+<p>
+<span class="aaa">開いたファイルは <B>fclose(　) 関数</B>で閉じておきます。</SPAN>
+</p>
+
+</DIV>
+
+<div class="cc" >
+  <span class="dai">fgets(　)関数</span>
+<p class="kt">
+fgets(　)関数は<span class="aaa">fopen(　)関数で、オープンしたファイルを1行づつ読み込みます。</SPAN>
+</p>
+$lengthを指定しない場合は、改行かEOF（End Of File）まで読み込みます。
+<p>
+while(　）｛print　｝構文でファイルが終わるまで読み込み、ブラウザに出力します。
+</p>
+<span class="orj">外部リンク参考サイトさん</span>　
+<a href="http://www.php-ref.com/b2api/04_fgets.html" target="_blank">fgets(　)関数使い方</a>
+</DIV>
+
+<div class="cc" >
+<span class="sample">fputs(　）関数、fwrite(　)関数</span>
+  <p class="kt">
+文字列を一行ずつ書き出す。
+</p>
+fwrite( $fp, "書き込む内容" );
+</DIV>
+<div class="cc" >
+  <span class="dai">file_get_contents(　) 関数</span>
+  <p class="kt">
+引数で指定したファイルを<span class="aaa">全て文字列として読み込みます</SPAN>
+</p>
+ <span class="aaa">file_get_contents("ファイル名");</span>
+ <p>
+php echo file_get_contents("ファイル名");?
+　でechoで出力する
+</p>
+</DIV>
+
+<div class="cc" >
+  <span class="dai">file_put_contents(　)関数</span>
+  <p>
+<span class="aaa">「第1引数」で指定したファイルに「第2引数」で<B>指定した文字列を書き込みます。</B></SPAN>
+</p>
+<span class="aaa"><B>file_put_contents("書き込み先ファイル名", "ファイルへの書き込内容");</B></span>
+<p>
+php　file_put_contents("書き込み先ファイル名", "ファイルへの書き込み内容");
+　ファイルの内容全体を書き換える
+</p>
+</DIV>
+
+<H2>CSVファイル</H2>
+
+CSVファイルとはComma-Separated Valuesのこと。
+<p class="kt">
+データを各項目ごとにカンマで区切ったテキスト形式のファイルです。
+</p>
+<span class="orj">外部リンク参考サイトさん</span>
+  <a href="http://ponk.jp/php/file/csv"target="_blank">CSVファイル読み込み</a>
+<div class="cc" >
+  <p>
+  <span class="aaa"><B>fopen("開きたいCSVファイル", "r");</B></SPAN>でCSVファイルを開く
+  </p>
+<B>fgetcsv(　)関数</B>を使い、開いたCSVファイルを1行ずつ読み込む
+<BR>
+<B>foreach(　）関数</B>を使って読み込んだ配列を変数にする
+<p>
+<B>while (fgetcsv関数で1行ずつ読み込み) {foreach関数で読み込んだ配列を変数にする{printでブラウザに出力}}</B>
+<p>
+<span class="aaa">while(　）｛　｝構文でファイルが終わるまで読み込み、配列化を続ける</SPAN>
+</p>
+テーブルタグを使うか、見やすいように<B>.（ドット） "br\n"改行タブをつけて、 print 配列名；でブラウザに出力</B>
+</p>
+</DIV>
+<a href="#top">
+  <IMG src="../icon/button.png"alt="上へボタン"width="52" height="52" class="tp">
+  </a>
+<P align="center"><IMG src="../pcjoshi.png"alt="楽しくpc" ></P>
+
+</body>
+</html>

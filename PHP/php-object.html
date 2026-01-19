@@ -1,0 +1,158 @@
+<html>
+<head>
+
+<title>オブジェクト指向とクラス</title>
+<meta charset="utf-8">
+<meta name="description" content="PHPのオブジェクト指向とクラスについて書き方など">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+</head>
+
+<body>
+<h1>オブジェクト指向とクラス</h1>
+
+<p class="ch"><script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getFullYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日（' + week + '）');
+// 表示終了
+
+// -->
+</script>
+</P>
+<ul>
+
+<li class="pn"><a href="../index.html"target="_blank">web制作・webライフ</a> &gt;</li>
+<li class="pn">オブジェクト指向とクラス</li>
+</ul>
+<h2>クラスについて</h2>
+<div class="cc" >
+<span class="dai">クラス</span>
+
+<p class="kt">
+  クラス ＝ 変数 ＋ 関数　（変数と関数の集まり。）
+</p>
+    <B>クラスが持つ「変数」をプロパティ </B>と呼び、<B>クラスが持つ「関数」をメソッド</B>と呼ぶ</SPAN>
+
+<p class="kt fir">
+  クラスとはオブジェクトを作るための設計図　
+</p>
+    クラスは変数と関数を持つことができデータをまとめて管理する。</span>
+    <p>
+    <span class="orj">外部リンク参考サイトさん</span>
+      <a href="http://www.php-labo.net/tutorial/class/"target="_blank">クラスについて
+      </a>
+    </p>
+  </DIV>
+
+<h3>オブジェクト</h3>
+<p class="kt">
+オブジェクトに対して何らかの操作を行う手続きのことを「メソッド」といいます。
+</p>
+
+<BR>
+<span class="aaa">
+インスタンスとオブジェクトは、ほとんど同じ</span>で「実体」ということ。クラスから作成される。
+<p class="kt">
+オブジェクト(object)を作成する構文  　<B>$オブジェクト名 = new クラス名();</B>
+</p>
+<span class="orj">外部リンク参考サイトさん</span>
+<a href="http://ponk.jp/php/basic/object"target="_blank">オブジェクト指向</a>
+<div class="cc" >
+  <span class="dai">アロー演算子「　->　」</span>
+  <p>
+    <B>アロー演算子は左辺から右辺を取り出す演算子</B>
+  </p>
+プロパティやメソッドにアクセスするには、オブジェクトに対して
+<BR>
+  <B>「　-> 」（アロー演算子）</B>を使用します。</span>
+
+</DIV>
+
+<h3>用語</h3>
+  <span class="sample2">クラス</span>
+変数と関数の集まり。オブジェクト指向の基本単位
+<BR>
+
+  <span class="sample2">プロパティ</span>クラスで定義された「変数や定数」のこと
+  <BR>
+
+  <span class="sample2">メソッド</span>クラスで定義された「関数」のこと
+  <BR>
+
+  <span class="sample2">オブジェクト</span>クラスを実体化させたもの。インスタンスともいう
+<h2>PDO</h2>
+<span class="aaa">PDO（PHP Data Object）とは、「PHPデータベース接続クラス」のこと。</span>
+　
+<BR>
+「MySQL」など多くのデータベースと接続することができる
+<p>
+PDOはPHP標準の機能なので、別途インストールの必要はありませんが、PDOを利用できなければ設定ファイル（php.ini）を編集する必要があります。
+</p>
+<span class="orj">外部リンク参考サイトさん</span>
+<a href="http://uxmilk.jp/15001"target="_blank">・PDOを使用しPHPでMySQLへ接続する方法</a>
+　<a href="http://ponk.jp/php/basic/php_mysql"target="_blank">・PDOを使用しPHPでMySQLへ接続する方法2</a>
+
+<h3>PDOの実際の書き方</h3>
+<span class="sample">
+PDOを使ってデータベースを操作する基本的な流れ</span>
+<p class="kt"><B>「まず、オブジェクトを作成する構文」　$オブジェクト名 = new クラス名();を使い、PDOオブジェクトの作成とMySQLでの接続
+  <BR>
+    →「SQLの発行（queryまたは、prepare、execute）」
+<br>
+    →「結果レコードの取り出し（fetch）」</B></span>になります。
+<div class="cc" >
+  <span class="dai">PDOオブジェクトの作成とMySQLでの接続</span>
+<p class="kt">
+$pdo = new PDO<BR>("mysql:dbname=データベース名;charset=utf8;", "root","パスワード");
+</p>
+<p>
+<span class="aaa"><B>「第2引数」</B>でデータベース接続のID、<B>「第3引数」</B>でデータベース接続のパスワードをそれぞれ指定</span>
+<br>
+  <span class="aaa">XAMPPインストール時のIDは「root」、パスワードはありません。</span>
+</p>
+  <B>charset=utf8;</B>で文字化け防止
+</DIV>
+
+<div class="cc" >
+  <B>SQLの発行（レコードの表示）</B>
+  <BR>
+SQL文を実行する方法は２種類ある（queryまたは、prepare、execute）
+<p>
+PDOにおいてもデータベースを扱うための命令はSQLを使います。
+</p>
+  PDOクラスの<B>queryメソッドでSQLの発行</B>ができます。
+<p class="kt">
+  <B>オブジェクト = $pdo->query("SELECT * FROM テーブル名");</B>
+</p>
+<span class="aaa"><B> -> （アロー演算子）</B>を使用</span>
+  </DIV>
+
+<p>
+  <span class=orj>外部リンク参考サイトさん</span>
+  <a href="http://ponk.jp/php/basic/php_mysql" target="_blank">PDOを使用して、PHPからMYSQLの操作</a>
+</P>
+
+レコードの追加
+<BR>
+フォームから追加
+<P align="center"><IMG src="../pcjoshi.png" ></P>
+  <a href="#top">
+  <IMG src="../icon/button.png"alt="上へボタン"width="52" height="52" class="tp">
+  </a>
+
+<HR color="white"ize="5"><HR color="blue">
+</body>
+</html>
