@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<title>レスポンシブ</title>
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+<meta charset="utf-8">
+<title>レスポンシブのやりかた、確認など</title>
+<meta name="description" content="幅（width）と高さ（height）、画像など">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name=”author” content=”komai”>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1S5ZLCQ35K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1S5ZLCQ35K');
+</script>
+
+<body>
+<h1>レスポンシブ<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+  <nav class="fr">
+  <ul>
+  <li class="pn"><a href="../index.html"target="_blank">web・アプリさくせい</a> &gt;</li>
+  <li class="pn">レスポンシブ</li>
+  </ul>
+  </nav>
+  <p style="clear:both;" class="ch">
+
+  <script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getFullYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日');
+// 表示終了
+
+// -->
+</script></P>
+<h2>目次</h2>
+<div class="flco">
+  <A href="#htb2">
+    <div class="flei">
+      幅と高さ
+<br>
+      (width、height
+<br>
+  など)のとこへ
+<br>
+  <IMG src="../nai-link.gif" >
+  </div>
+      </A>
+  <A href="#rgu">
+    <div class="flei">
+画像
+<br>
+(フルードイメージ
+<br>
+など)のとこへ
+<bR>
+<IMG src="../nai-link.gif" >
+</div>
+</a>
+</div>
+<h2>基本</h2>
+<p class="kt fir" >
+PC、スマホなど、異なる画面サイズに応じて、ページのレイアウト・デザインを調整すること。
+<br>
+ブラウザの横幅サイズから判断して、画面を切り替えていきます。
+</p>
+<p class="kt">
+テキストや画像が多すぎる場合、スマホでは文字が溢れてしまうなどレスポンシブ化は難しくなる。<span class="utn">なるべく余白を多くとる</span>
+</p>
+大きい画像はスマホの3G/4G回線では読み込むのに時間がかかる。
+
+<h2>メディアクエリ</h2>
+CSS3の新しい要素。<span class="aaa">
+webページの表示をデバイスに応じて切り替える機能のこと</span>
+<p class="kt" >
+「画面サイズの幅がこれだったら、このスタイルを適用」「横向き画面用のスタイル」など　
+<br>
+<span class="aaa">一つのCSSで複数の画面環境に対応することができる。</span></p>
+<div class="cc" >
+  <span class="dai">
+ブレークポイント
+</span>
+何px以上（または何px以下）なら、このCSSを適用という基準点のこと。
+</div>
+<h3>書き方</H3>
+  書き方は二つあります。
+  <br>
+  一つは、<span class="aaa">HTMLファイル内のhead内に書く方法です。
+  複数cssを用意して画面サイズによってcssを指定できます。</span>
+  <div class="cc" >
+    <span class="dai">
+cssに記述する方法
+</span>
+<br>
+@media の後に適用したいブラウザサイズ(クエリ)を指定します。
+<table border="2">
+  <tr><td><b>max-width:</b></td><td>ブラウザ幅が指定した幅よりも小さい時に適用</td></tr>
+  <tr><td><b>min-width:</b></td><td>ブラウザ幅が指定した幅よりも大きい時に適用</td></tr>
+  <tr><td><b>min-height:</b></td><td>ブラウザの高さが指定した高さよりも大きい時に適用</td></tr>
+  <tr><td><b>max-height:</b></td><td>ブラウザの高さが指定した高さよりも小さい時に適用</td></tr>
+
+</table>
+
+</div>
+<h2>viewport</h2>
+metaタグの一つ。PCやスマホでの画面表示領域を設定することができます。
+<br>
+　<a href="../meta.html"target="_blank" >メタタグのページへ<IMG src="../nai-link.gif" ></a>
+<p class="sty">
+<span class=orj>外部リンク参考サイトさん</span>  <a href="http://www.tagindex.com/html5/page/meta_viewport.html"target="_blank" >viewportについてのサイトへ</A>
+</p>
+<h3>書き方</H3>
+HTMLファイルの<B>headタグ内</B>に記述します
+<br>
+<B>「name属性」</B>を使い<B>「content属性」</B>を付けます
+<p class="kt">
+  &lt;meta name="viewport"content="width=device-width, サイズ"&gt;
+  </p>
+<p class="kt" >
+複数のプロパティを指定する場合は、カンマ（ , ）で区切って記述します。
+</p>
+<h2 id="htb2">幅（width）と高さ（height）</h2>
+<p class="kt" >
+幅や高さの指定はpxだとスマホでは大きすぎたりして、うまくいかないことがあり、％指定がおすすめ
+</p>
+<h3>max-widthとmin-width</h3>
+widthを親要素として一緒に使うことが多い。
+<p class="kt fir" >
+小さい画面では幅いっぱいに表示し、大きい画面では固定幅にする時などでwidthとmax-widthを使用します。
+</p>
+<span class="dai">
+セレクタ{max-width: 数値px;}
+</span>
+<br>
+<span class="dai">
+セレクタ{min-width: 数値px;}
+</span>
+
+<h3>min-heightとmax-height</h3>
+<p class="kt fir">
+高さの最小値、最大値を指定する
+</p>
+<span class="dai">
+セレクタ{min-height: 数値px;}</span>
+<p class="sty">
+高さが数値より小さくならないようにする
+</p>
+<span class="dai">
+セレクタ[max-height: 数値px;}</span>
+高さが数値以上大きくならないようにする
+</p>
+<h2 id="rgu">画像</h2>
+<p class="kt fir" >
+「max-width: 100%;」を使い、画像が100%以上に広がらないようにする。
+</p>
+<p class="sty">
+<span class="orj">外部リンク参考サイトさん</span>
+<a href="https://sole-color-blog.com/blog/72/" target="_blank">画像のレスポンシブ</a>
+</p>
+<span class="dai">
+フルードイメージ
+</span>
+画像のサイズをブラウザのウィンドウ幅に合わせる方法。
+cssだけに記述する。
+<p class="kt" >
+HTMLでwidthとheightを記述しない。
+</p>
+<p class="kt" >
+img {
+width:100%;
+max-width: 100%;
+height: auto;
+}
+</p>
+<h2>確認</h2>
+いろいろなスマホやブラウザのサイズ表示確認
+<div class="cc" >
+  <span class="sample">Firefox</span>
+<ul>
+  <li>
+  開発ツール(F12キー)からスマートフォンの形のアイコンをクリック→左上「レスポンシブ」の表示からサイズ選択。</li>
+  <li>
+  または、右上メニュー → ウェブ開発→ レスポンシブデザイン(Ctrl+Shift+m)→左上「レスポンシブ」の表示からサイズ選択。</li>
+</ul>
+</div>
+<div class="cc" >
+<span class="sample">Google Chrome</span>　デベロップツール(F12キー)→左上からサイズ選択。
+</div>
+<a href="#top"><!aタグでアイコンを囲む>
+<img src="../icon/button.png" class="tp"></a>
+<HR color="white"ize="5"><HR color="blue">
+</body>
+</html>

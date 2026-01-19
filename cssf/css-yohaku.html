@@ -1,0 +1,198 @@
+<html>
+
+<head>
+    <LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+    <meta charset="utf-8">
+    <title>CSS余白(paddingとmargin)</title>
+    <meta name="description" content="paddingとmarginの設定のしかた。左右上下別々、マイナスマージン、 margin:autoなど">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=”author” content=”komai”>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1S5ZLCQ35K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1S5ZLCQ35K');
+</script>
+
+<body>
+    <header>
+        <h1>css余白(paddingとmargin)<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80" class="tpg"></h1>
+
+    </header>
+    <ul>
+        <li class="pn"><a href="../index.html" target="_blank">web制作・webライフ</a> &gt;</li>
+        <li class="pn">css余白（paddingとmargin）</li>
+    </ul>
+    <p class="ch">
+        <script type="text/javascript">
+            <!--
+            var weeks = new Array('日', '月', '火', '水', '木', '金', '土');
+
+            var lastup = new Date(document.lastModified);
+
+            var year = lastup.getFullYear(); // 年
+            var month = lastup.getMonth() + 1; // 月
+            var day = lastup.getDate(); // 日
+            var week = weeks[lastup.getDay()]; // 曜日
+
+            // 表示開始
+            document.write('更新日：' + year + '年' + month + '月' + day + '日（' + week + '）');
+            // 表示終了
+
+            // 
+
+            -->
+        </script>
+    </P>
+    <h2>概要</h2>
+    <b>外側に余白を作るのが”margin”　内側に余白を作るのが”padding”</b>、それぞれ数値を指定します
+    <p class="kt">
+        インライン要素は左右だけ margin、padding を指定できる。
+    </p>
+    spanなどのインライン要素には<span class="aaa">display:inline-block;</span>を追加する。
+    <BR>
+    画像IMGタグにも使用できます
+    <h3>margin</H3>
+   
+    
+    <p class="kt">
+        外側に余白を作る　margin: px;
+    </p>
+    
+    <div class="cc">
+        <span class="dai">
+            上下左右のマージン（余白）をまとめて指定
+        </span>
+        値を1つ指定：<b> [上下左右]</b>の余白になります。
+        <BR>
+        値を2つ指定： <b>記述した順に[上下][左右]</b>の余白になります。
+        <BR>
+        値を3つ指定： <b>記述した順に[上][左右][下]</b>の余白になります。
+        <BR>
+        値を4つ指定：<b>記述した順に[上][右][下][左]</b>の余白になります。
+    </div>
+    <div class="cc">
+        <span class="dai">
+            {margin: 0 auto;}
+        </span>
+        <p class="kt">
+            block要素を<span class="utn">水平中央にする。上下にはきかない</span>。幅（width）を指定必須
+        </p>
+        (<span class="aaa">左右のmarginの値をautoすることで、右側と左側のmarginが等しくなり</span>、
+        <BR>
+        結果として要素が中央寄せになります。上下のmarginは0)
+        </p>
+        <span class="orj">外部リンク参考サイトさん</span>
+        <a href="http://honttoni.blog74.fc2.com/blog-entry-229.html" target="_blank">margin:autoについて</a>
+    </div>
+    <div class="cc">
+        <span class="dai">
+            上下左右のマージン（余白）を<span class="utn">個別に</span>指定
+        </span>
+        <p class="kt">
+            　top:数値など;　right:数値など;　bottom:数値など;　left:数値など;でそれぞれ指定する
+        </p>
+        <table border="2" cellpadding="2">
+            <tr>
+                <td>margin-top:</td>
+                <td>px、またはパーセント等;</td>
+                <td><b>上の余白</b>を指定</td>
+            </tr>
+            <tr>
+                <td>margin-right:</td>
+                <td>px、またはパーセント等;</td>
+                <td><b>右の余白</b>を指定</td>
+            </tr>
+            <tr>
+                <td>margin-bottom:</td>
+                <td>px、またはパーセント等;</td>
+                <td><b>下の余白</b>を指定</td>
+            </tr>
+            <tr>
+                <td>margin-left:</td>
+                <td>px、またはパーセント等;</td>
+                <td><b>左の余白</b>を指定</td>
+            </tr>
+        </table>
+    </div>
+    <div class="cc">
+        <span class="dai">
+            ネガティブマージン（マイナスマージン）
+        </span>　marginの数値をマイナス指定すること。ネガティブマージンは<span class="aaa">余白を空けず、間を詰めること</span>
+        <p class="kt">
+            margin: -px
+        </p>
+    </div>
+    <span class="orj">外部リンク参考サイトさん</span>
+    <a href="http://masaboo.cside.com/new_css1/cs_30.htm" target="_blank">margin設定について</a>
+    <h3>padding</H3>
+    <p class="kt">
+        内側に余白を作るのが　padding: px。
+        <br>
+        値を1つ指定した場合、指定した値が上下左右の余白になります。
+    </p>
+    
+    
+       
+        <p class="kt">
+            内側の余白をつくる。基本的な設定はmarginと同じ
+
+        </p>
+
+        <div class="cc">
+        上下左右を異なる余白にしたい場合には、スペースで区切って複数の値を指定します。
+        <p class="kt">
+            {
+            padding: 数値px 数値px 数値px 数値px;
+            }
+        </p>
+  
+   
+        <span class="dai">
+            上下左右のパッディング（余白）を<span class="utn">個別に</span>指定
+        </span>
+        <p class="kt">
+            　top:　right:　bottom:　left:でそれぞれ指定する
+        </p>
+        <table border="2" cellpadding="3">
+            <tr>
+                <td>padding-top:</td>
+                <td>px、またはパーセント等</td>
+                <td><b>上の余白</b>を指定</td>
+            </tr>
+            <tr>
+                <td>padding-right:</td>
+                <td>px、またはパーセント等</td>
+                <td><b>右の余白</b>を指定</td>
+            </tr>
+            <tr>
+                <td>padding-bottom:</td>
+                <td>px、またはパーセント等</td>
+                <td><b>下の余白</b>を指定</td>
+            </tr>
+            <tr>
+                <td>padding-left:</td>
+                <td>px、またはパーセント等</td>
+                <td><b>左の余白</b>を指定</td>
+            </tr>
+        </table>
+    </div>
+    <p>
+        <a href="http://tips.nishishi.com/css/each-paragraph-text-indent.html" target="_blank">文章の1行目の空白。</a>　{text-indent:px;}をつかう。単位はpxまたはem
+    </P>
+    <span class="orj">外部リンク参考サイトさん</span>
+    <a href="http://www.tagindex.com/stylesheet/box/padding.html" target="_blank">padding設定</a>
+    <a href="#top">
+        <img src="../icon/button.png" class="tp">
+    </a>
+    <P align="center"><IMG src="../pcjoshi.png" alt="楽しくpc"></P>
+    <HR color="white" ize="5">
+    <HR color="blue">
+</body>
+
+</html>

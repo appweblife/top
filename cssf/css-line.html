@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<title>CSSの線について</title>
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+  <meta charset="utf-8">
+<meta name="description" content="CSSのhrやborderなど下線や枠線について書いています。">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name=”author” content=”koma”>
+</head>
+
+<body>
+<h1>CSSの線について<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+<ul>
+<li class="pn"><a href="../index.html"target="_blank">web・アプリさくせい</a>&gt;</li>
+<li class="pn">CSSの線について</li>
+</ul>
+<P class="ch">
+  <script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getFullYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日');
+// 表示終了
+
+// -->
+</script>
+</P>
+
+<h2>css下線の引き方</h2>
+<span class="dai">
+border-bottom: pxやカラー名 線のスタイル;
+</span>
+<p class="kt fir" >
+太さ・スタイル・色を指定。指定する順番は決まっておらず、半角スペースで区切って記述します。
+</p>
+<div class="cc" >
+  <span class="dai">
+    スタイル
+    </span>
+<span class="aaa">下に1本だけ線を引くには、「 border-bottom:  solid ;」
+  <p>
+    <span class="aaa">
+    上に1本引きたいなら、
+    「border-top:  solid ;」
+  </span>
+  </p>
+<p>
+  <span class="aaa">
+  点線を1本引きたいなら、
+  「dotted」
+</span>
+</p>
+破線なら「dashed」、二重線なら「double」 	</span>など、いくつかあります。
+</div>
+<span class="orj">外部リンク参考サイトさん</span>
+<a href="http://tips.nishishi.com/css/line-border-hr.html" target="_blank">css線の引き方 </a>
+<h3>マーカー風</h3>
+文字にマーカー風のラインを引きます。
+<p class="kt" >
+セレクタ{background:linear-gradient(transparent 数値%, 線の色 0%)}
+</p>
+<span class="aaa">
+transparentの後ろの%で線の太さを決めます。数値が高いほど線が細く、また、低いほど線が太くなります。
+</span>
+<h2>左右の線の設定</h2>
+<h3>border-left:</h3>
+<p class="kt" >
+border-left: 数値px スタイル カラー名;
+</p>
+<h3>border-right:</h3>
+<p class="kt" >
+border-right: 数値px スタイル カラー名;
+</p>
+<h2>枠線の設定</h2>
+<span class="dai">要素 {border: 太さ スタイル 色;}</span>
+<p class="kt fir" >
+要素に対して、borderプロパティを使用。
+<br>
+太さ、色、スタイルをまとめて上下左右の枠線を設定します。それぞれ半角スペースで区切ります。
+</p>
+<ul>
+<li><span class="sample">太さの設定</span>　border:数値px</li>
+<p class="sty">
+  <li><span class="sample">線のスタイル</SPAN>　solid 	実線　dotted 	点線　double 	二重線など</li>
+<br>
+<li><span class="sample">枠線のスタイルのみ指定</SPAN>　border-style:線のスタイル;</li>
+</p>
+</ul>
+<div class="gibs">
+<span class="orj">外部リンク参考サイトさん</span>
+<br>
+<a href="http://www.nishishi.com/css/image-with-border.html" target="_blank">・枠線のつけかた　やや応用</a>
+　<a href="http://www.htmq.com/style/border-style.shtml" target="_blank">・上下左右別枠線のつけかた</a>
+　<a href="http://www.tagindex.com/stylesheet/properties/border.html" target="_blank">・枠線のつけかた　きほん</a>
+</div>
+<h2>区切り線、水平線（hr）の装飾</h2>
+
+まず、デフォルトで設定されているhr要素のスタイルをcssでそれぞれリセットする
+<p class="kt">
+hr {
+height: 0;
+margin: 0;
+padding: 0;
+border: 0;
+}
+</p>
+それぞれ、
+height: 0;で高さをリセット　
+margin: 0; でマージンをリセット
+
+　padding: 0; でパディングをリセット　
+border: 0;ボーダーをリセット
+<ul>
+<p class="sty">
+<li><span class="sample">
+点線
+</span>　<span class="aaa">hr {
+border-top: 太さの数値px dottedカラー名;
+}</span></li>
+<br>
+<li><span class="sample">
+破線
+</span>　<span class="aaa">hr {
+border-top: 太さの数値px dashedカラー名 ;
+}</span>
+</li>
+</p>
+</ul>
+<p>
+<span class="orj">外部リンク参考サイトさん</span>
+<a href="http://morobrand.net/mororeco/css/hr-style/" target="_blank">
+区切り線、水平線の装飾</a>
+</p>
+<a href="#top"><!aタグでアイコンを囲む>
+<img src="../icon/button.png" class="tp">
+</a>
+<P align="center"><IMG src="../pcjoshi.png"alt="楽しくpc" ></P>
+<HR color="white"ize="5"><HR color="blue">
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <title>cssでの文字設定のやり方</title>
+    <LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+    <meta name="description" content="CSSでの文字の大きさ、色、リンク設定などついて書いています。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=”author” content=”komai”>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>CSS文字設定<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80" class="tpg"></h1>
+
+    <nav class="fr">
+        <ul>
+            <li class="pn"><a href="../index.html" target="_blank">web・アプリさくせい</a> &gt;</li>
+            <li class="pn">CSS文字について</li>
+        </ul>
+    </nav>
+
+    <p class="ch">
+        <script type="text/javascript">
+            <!--
+            var weeks = new Array('日', '月', '火', '水', '木', '金', '土');
+
+            var lastup = new Date(document.lastModified);
+
+            var year = lastup.getFullYear(); // 年
+            var month = lastup.getMonth() + 1; // 月
+            var day = lastup.getDate(); // 日
+            var week = weeks[lastup.getDay()]; // 曜日
+
+            // 表示開始
+            document.write('更新日：' + year + '年' + month + '月' + day + '日');
+            // 表示終了
+
+            // 
+
+            -->
+        </script>
+    </p>
+    <h2 style="clear:both;">目次</h2>
+    <div class="flco">
+        <a href="#kankaku">
+            <div class="flei">
+                行間、字間など
+                <br>
+                <IMG src="../nai-link.gif">
+            </div>
+        </a>
+
+        <a href="#fotnd">
+            <div class="flei">
+                フォント、
+                <br>
+                サイズ、太さ、カラー
+                <br>
+                など<IMG src="../nai-link.gif">
+            </div>
+        </a>
+
+        <a href="#mlink">
+            <div class="flei">
+                リンク
+                <br>
+                <IMG src="../nai-link.gif">
+            </div>
+        </a>
+    </div>
+    <h2>色</h2>
+    <h3>文字色</H3>
+    <p class="kt">
+        {
+        color:カラー名;
+        }
+    </p>
+    <h3>文字背景色</H3>
+    <div class="cc">
+        <span class="dai">
+            cssの文字背景色</span>
+        <p class="kt">
+            セレクタ｛ background-color:カラー名;｝
+        </p>
+        <span class="orj">外部リンク参考サイトさん</span>
+        　<a href="http://yume.hacca.jp/koiki/text/haikei.htm" target="_blank">cssの文字背景色や文字色について</a>
+    </div>
+
+    <div class="cc">
+        <span class="dai">
+            マーカー風
+        </span>
+        <span class="aaa">linear-gradient属性</span>を使う
+
+        <p class="kt">
+            要素{ background: linear-gradient(transparent 線の太さ 数値%, 線の色 数値%)}
+        </p>
+        <span class="aaa">線の太さは0%が一番太く、数値を大きくすると細い線になります。
+        </span>
+        <br>
+        <span class="aaa">
+            線の色の後ろの%指定は0%、もしくは線の太さと同じ%にする</span>
+    </div>
+
+    <h2 id="kankaku">間隔</h2>
+
+    <h3> line-height</h3>
+
+    　<b>行の高さを指定する</b>
+    <p class="kt">
+        要素 {line-height: 行の高さの値（フォントサイズと上下の余白合計）}
+    </p>
+    <p class="sty">
+        <b>px、em、%、数値</b>のみのどれかで指定します。マイナスの指定はできません。数値のみ記述するのが一般的
+        <br>
+        <span class="aaa">行の高さの値がフォントサイズより小さい場合は、 行が重なって表示されます。
+        </span>
+
+
+    </p>
+    <span class="orj">外部リンク参考サイトさん</span>　<a href="http://www.tagindex.com/stylesheet/text_font/line_height.html" target="_blank">line-heightについて</a>
+    <h3>letter-spacing</h3>
+    <b>文字間になります</b>。
+    <p class="kt">
+        {letter-spacing: 値}
+        <br>
+        値はpxやem。数値をマイナスにすると文字間が狭くなる。小数点以下も指定できる。
+    </p>
+    <div class="cc">
+        <span class="dai">em</span>
+        emでは<b>「0.05em~0.1em」</b>の間で設定するとちょうどよい。
+    </div>
+    <h2 id="fotnd">フォントなど</h2>
+    <p class="kt">
+        OSによって入っているフォントが異なり、
+        WindowsとMacやiPhone/iPad（iOS）ではインストールされているフォントが異なる。
+        <br>
+        ほとんどがゴシック系のフォント　<span class="md">「sans-serif」</span>を使っています。
+    </p>
+    <div class="cc">
+        <span class="dai">一括設定</span>
+        <span class="sample">font</span> 文字スタイル（<span class="aaa">太さ、サイズ、行の高さ、フォント、イタリック体、スモールキャピタル、を
+        <br>
+        一括指定するプロパティです</span>）。
+        <p class="stt">
+            <span class="aaa">"サイズ"と"フォント"の値が必須です。この2つ以外の値は省略できます。</span>
+            <br>
+            省略した場合、そのプロパティの初期値が適用される
+        </p>
+    </div>
+    <div class="cc">
+        <span class="dai">
+            font-family;
+        </span>
+        <p class="kt">
+            font-family:のあとに指定するフォントを記述。
+        <p class="kt">要素 {font-family:フォント名; }</p>
+
+        <span class="aaa">複数のフォントを指定するときはカンマ（ , ）で区切ります。前に書かれているフォントが優先されます</span>。
+        <br>
+        フォント名にスペースが含まれる場合は「'」（クォーテーション）か「"」（ダブルクォーテーション）でフォント名を囲む。
+        <br>
+        指定したフォントがOSにない場合には、デフォルトのフォントになります。
+        </p>
+        「sans-serif」 ゴシック系のフォント　「serif」 明朝系のフォント　
+        <span class="orj">外部リンク参考サイトさん</span><a href="https://w3g.jp/sample/css/font-family#serif" target="_blank">font-familyでのフォント一覧</a>
+        <p class="kt">
+            「メイリオ」
+            、「游ゴシック」(やや細目)、「ヒラギノ」(iOSやOSXに搭載されている)などがオススメ！
+        </p>
+
+    </div>
+    <div class="cc">
+        <span class="dai">
+            font-weight:
+        </span>
+        <p class="kt">
+            文字の太さを指定する。
+        </p>
+        normalは通常の太さで初期値になります。
+        <br>
+        <span class="aaa">boldに設定すると太字になります</span>。
+        <span class="kt">
+            font-weight:bold;</span>
+        <p>
+            <p class="kt">
+    数値で指定することもできます。
+    100、200，300，400，500，600，700，800，900の数値から指定します。
+</p>
+    <span class="aaa">100 が最も細く、900 が最も太くなります。</span>。
+    <br>
+    font-weight: 700;
+    </div>
+    <div class="cc">
+        <span class="dai">
+            font-size:
+        </span>　<b>文字サイズを指定するプロパティ</b>。<span class="aaa">値にはパーセントなどが指定。</span>
+
+        <p class="kt">
+            要素{font-size:数値%;}
+        </p>
+        <table border="2">
+            <caption>キーワード指定の場合</caption>
+            <TR>
+                <TD>xx-large</TD>
+                <TD>最大</TD>
+            </TR>
+            <TR>
+                <TD>x-large</TD>
+                <TD></TD>
+            </TR>
+            <TR>
+                <TD>large</TD>
+                <TD></TD>
+            </TR>
+            <TR>
+                <TD>medium</TD>
+                <TD>標準（初期値）</TD>
+            </TR>
+            <TR>
+                <TD>small</TD>
+                <TD></TD>
+            </TR>
+            <TR>
+                <TD>x-small</TD>
+                <TD></TD>
+            </TR>
+            <TR>
+                <TD>xx-small</TD>
+                <TD>最小</TD>
+            </TR>
+
+        </table>
+
+        <br>
+        <span class="orj">外部リンク参考サイトさん</span>　<a href="http://www.tagindex.com/stylesheet/text_font/font_size.html" target="_blank">css文字サイズ</a>
+    </div>
+    <div class="cc">
+        <span class="dai">
+            color
+        </span>
+        <p class="kt">
+            文字色を設定します。
+            <br>
+            セレクタ{
+            color:カラーコード;
+            }
+        </p>
+    </div>
+    <span class="sample">text-stroke
+    </span> Webkit以外での使用はできません。
+    <h3>webフォント</H3>
+    <div class="cc">
+        <span class="dai">
+            Google Web Fonts
+        </span>
+        <a href="https://fonts.google.com/?subset=japanese" target="_blank">グーグルフォント<IMG src="../banako.gif">
+        </a>　無料。
+        HTMLのhead内にコピペ、CSSのfont-familyに設定します。
+    </div>
+    <div class="cc">
+        <span class="dai">
+            Font Awesome
+        </span>
+        <p class="kt">
+            いろいろなアイコンを利用できます。
+        </p>
+
+        CDNを利用する方法とダウンロードする方法の2種類があります。CDNを利用する方法が手軽に使えます。
+        <br>
+        <a href="https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css" target
+        ="_blank">Font Awesomeフリー<IMG src="../banako.gif">
+        </a>　無料と有料があります。
+        <p>
+            <a href="https://fontawesome.com/icons?d=gallery&m=free" target="_blank">
+                FontAwesomeのアイコン一覧ページ<IMG src="../banako.gif"></a>
+        </p>
+        <p>
+            HTMLのhead内にコピペします。そのあと、アイコン一覧から使いたいアイコンをクリックすると詳細ページになり、
+            <br>
+            そこの左側にあるコードをHTMLの使いたい場所に貼ります。
+        </p>
+        <span class="orj">外部リンク参考サイトさん</span>
+        　<a href="https://saruwakakun.com/html-css/basic/font-awesome#section6" target="_blank">FontAwesome使い方
+            　</a>
+    </div>
+    <h2>強調</H2>
+    <div class="cc">
+        <span class="dai">text-shadow:</span>
+        <b>テキストに影をつける</b>。
+        <br>
+        <span class="aaa">スペースで区切り、水平方向　垂直方向　ぼかし　影の色　を指定します。</span>
+        <br>
+        長さの値には、pxなどがあります。
+        </p>
+        <p class="kt">
+            要素{text-shadow: 数値px 数値px 数値px カラー名; }
+        </p>
+    </div>
+    <div class="cc">
+        <span class="dai">
+            text-emphasis:
+        </span>　文字上部にマークを表示
+        <p class="kt sty">
+            {text-emphasis:塗りかた 形 色;}
+        </p>
+        <span class="dai">
+            text-emphasis-style
+        </span>　文字上部にマークを表示<span class="aaa">（カラー表記なし）</span>
+        <p class="kt">
+            { text-emphasis-style : スタイル 形; }
+        </p>
+        <p class="sty">
+            <span class="sample">
+                塗りかた
+            </span>
+            2種類あります。
+            <span class="aaa">
+                filled(塗りつぶし)と、
+                open(塗りつぶさない)
+            </span>
+        </p>
+        <span class="dai">
+            点の形
+        </span>
+        <p class="sty">
+
+            <span class="aaa">
+                circle(円)、
+                double-circle(二重円)、
+                dot(点)、 triangle(三角形)、
+                sesame(ゴマ)等があります。
+            </span>
+        </p>
+        <span class="orj">
+            外部リンク参考サイトさん
+        </span><a href="http://shanabrian.com/web/css3/text-emphasis.php" target="_blank">text-emphasis: の値について
+        </a>
+    </div>
+    <h2 id="mlink">リンク</h2>
+    <div class="cc">
+        <span class="dai">リンクの文字色</span>
+        <table border="1" cellpadding="9">
+
+            <caption><b> リンクの4つの状態に文字色を指定できます。</b></caption>
+            <tr>
+                <TD>
+                    a:link { color: カラー名; }</TD>
+                <td>未訪問のリンク</td>
+            </tr>
+            <tr>
+                <TD>a:visited { color: カラー名; }</td>
+                <td>訪問済みのリンク</td>
+            </tr>
+            <tr>
+                <TD>
+                    a:hover { color: カラー名; }</td>
+                <td>ポイント時のリンク</td>
+            </tr>
+            <tr>
+                <TD>
+                    a:active { color: カラー名; }</td>
+                <td>選択中のリンク
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="cc">
+        <span class="dai">セレクタ{text-decoration:値;}</span>
+        <p class="kt">
+            下線、上線、取り消し（打ち消し）線、点滅など
+            文字装飾するときのプロパティです。
+            <br>
+            すべての要素に適用できます。
+        </p>
+        <span class="aaa">値には none、underline、overline、line-through、blink があります</span>
+        <table border="1" cellpadding="7">
+
+            <tr>
+                <TD>
+                    text-decoration:none;</TD>
+                <td>なし</td>
+            </tr>
+            <tr>
+                <TD>text-decoration:underline;</td>
+                <td>文字に下線を引く</td>
+            </tr>
+            <tr>
+                <TD>text-decoration:overline;
+                </td>
+                <td>文字に上線を引く</td>
+            </tr>
+            <tr>
+                <TD>text-decoration:line-through;
+                </td>
+                <td>文字に取り消し線を引く
+                </td>
+            </tr>
+            <tr>
+                <TD>
+                    text-decoration:blink;</TD>
+                <td>文字を点滅させる</td>
+            </tr>
+        </table>
+
+        <br>
+        ブラウザは対応しているのとしてないのがある
+        <br>
+        <span class="dai">
+            text-decoration: none;</span>
+        <p class="kt">
+            text-decorationプロパティを使いリンクの下線を非表示にできます。値をnone;装飾なし
+        </p>
+        <p class="kt">
+            a { text-decoration: none; }
+        </p>
+        <span class="orj">外部リンク参考サイトさん</span>
+        <a href="http://www.tagindex.com/stylesheet/text_font/text_decoration.html" target="_blank">text-decorationについて
+        </a>
+    </div>
+    <span class="sample">
+        a {outline:none;}
+    </span> リンクをクリックした後に残る点線の枠が無くなる。
+    <h2>スタイルの適用</h2>
+    <span class="orj">外部リンク参考サイトさん</span>
+    <a href="http://yume.hacca.jp/koiki/text/font.htm" target="_blank">部分的なスタイルの適用
+    </a>
+    <p class="kt">
+        cssにクラス内容を記述し、htmlにspanタグにclass属性を付けて囲みます。
+    </p>
+    <P align="center"><IMG src="../pcjoshi.png"></P>
+    <a href="#top">
+        <img src="../icon/button.png" class="tp">
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<head>
+
+<title>セレクタ</title>
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+  <title>いろいろなCSSセレクタ</title>
+  <meta name="description" content="セレクタの書き方や子孫セレクタ、リンクに関するクラスなど">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name=”author” content=”koma”>
+</head>
+
+<body>
+<h1>セレクタ<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+  <ul>
+  <li class="pn"><a href="../index.html"target="_blank">web・アプリさくせい</a> &gt;</li>
+  <li class="pn">cssセレクタ</li>
+  </ul>
+<p class="ch">
+  <script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+if(year < 2000) { year += 1900; }
+
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日');
+// 表示終了
+
+// -->
+</script>
+</p></center></header>
+
+<HR color="white"ize="5"><HR color="blue">
+<h2>目次</h2>
+<div class="flco">
+<a href="#giy">
+<div class="flei">
+  擬似要素
+  <br>
+  のとこへ
+  <br>
+  <IMG src="../nai-link.gif" >
+</div>
+   </a>
+   <a href="#sison">
+   <div class="flei">
+     子孫セレクタ
+     <br>
+     のとこへ
+     <br>
+     <IMG src="../nai-link.gif" >
+   </div>
+      </a>
+</div>
+<h2>セレクタきほん</h2>
+<span class="sample">セレクタとは</span>
+スタイルを設定したい対象のこと。要素ともいう。<id="top">
+<div class="gibs">
+  <span class="skd">外部リンク参考サイトさん</span>
+    <a href="http://masaboo.cside.com/new_css1/cs_02.htm" target="_blank">・css基本</a>　セレクタ＆プロパティ
+<br>
+　<a href="http://zero.css-happylife.com/selectors/" target="_blank">・いろいろなセレクタ</a>
+　<a href="http://scene-live.com/page.php?page=42" target="_blank">・最新セレクタ　</a>
+　    <a href="http://weboook.blog22.fc2.com/blog-entry-268.html" target="_blank">・最新セレクタ豊富</a>
+
+</div>
+  <div class="cc" >
+    <span class="dai">セレクタ , セレクタ｛プロパティ：値；｝</span>
+<p class="sty">
+  同じスタイルを<span class="utn">複数のセレクタに適応させたい</span>場合は、<span class="aaa">セレクタ間を , (コンマ)で区切ってセレクタを複数記入</span>していきます。
+</p>
+  <span class="orj">外部リンク参考サイトさん</span>
+    <a href="http://www.htmq.com/selector/selectors.shtml" target="_blank">複数のセレクタに同じスタイルを設定する</a>
+</div>
+
+  <div class="cc" >
+    <span class="dai">セレクタ｛プロパティ：値；プロパティ：値；｝</span>
+    <span class="aaa">セレクタに<span class="utn">複数のスタイル</span>を設定</span>するには、
+    <p class="kt">
+      （プロパティ：値）を；(セミコロン)で区切ります。
+    </p>
+  </div>
+    <span class="sample">タイプセレクタ</span>
+ｈ1やｐなどを適用
+<p>
+  <span class="dai">ユニバーサルセレクタ</span>
+<span class="aaa">アスタリスク（*）ですべての要素</span>に適用することができます。
+<br>
+サイト全体や要素全体など。
+<span class="aaa">*{　}　要素*{　}</span>
+</p>
+
+<h2>優先順位</h2>
+<p class="kt fir" >
+後にあるものが優先度が高い。<span class="utn">上から下へCSSを読んだ時に記述的に下にあるもの</span>
+</p>
+タイプセレクタとclassセレクタでは<span class="aaa" >classセレクタが優先される.</span>
+<h2 id="sison">子孫セレクタ</h2>
+<p class="kt fir">
+指定したセレクタの<span class="utn">下の階層にある要素に</span>スタイルを適用します。
+</p>
+<span class="orj">外部リンク参考サイトさん</span>
+<a href="http://www.htmq.com/selector/descendant.shtml" target="_blank">子孫セレクタについて
+</a>
+<div class="cc" >
+<span class="dai">親要素　子要素</span>
+<span class="aaa" >
+  親セレクタ（親要素）と子孫セレクタ（子要素）の<span class="utn">間は、半角スペースを開けます。</span></span>
+  <p class="kt" >
+  適用させたいセレクタの上の階層セレクタ 適用させたいセレクタ {プロパティ名:値;}
+</p>
+</div>
+<div class="cc" >
+  <span class="dai">子セレクタ</span>
+子要素だけにスタイルを指定できるセレクタです。
+<p class="kt" > セレクタを「>」で区切ると、<span class="md">直下の階層の要素のみ</span>スタイルを適用します。</p>
+<p class="kt" >
+  親要素>子要素
+</p>
+</div>
+  <h2>擬似クラス</h2>
+  <p class="kt" > 要素{プロパティ名:値;}
+    </p>
+  　<span class="orj">外部リンク参考サイトさん</span><a href="http://wp-p.info/tpl_rep.php?cat=css-intermediate&fl=r4" target="_blank">いろいろな擬似クラスの設定</a>
+
+
+  <h3>リンクに関するクラス</H3>
+  <table border="1"cellpadding="7">
+<tr><TD>
+  a:link{プロパティ名:値;}</TD><td>
+     未訪問リンクのクラス</td></tr>
+<tr><TD>
+a:visited{プロパティ名:値;}</td><td>
+訪問済みリンクのクラス</td></tr>
+<tr><TD>
+a:active{プロパティ名:値;}</td><td>
+クリック時のクラス</td></tr>
+<tr><TD>
+a:hover{プロパティ名:値;}</td><td>
+カーソルが乗ったときのクラス</td></tr>
+</table>
+
+<h3>:hover{プロパティ名:値;}</H3>
+  <p class="kt fir">
+カーソルなどが乗ったときのスタイルを指定します。
+</p>
+<p class="kt" >
+   要素:hover{プロパティ名:値;}
+</p>
+
+<span class="aaa"> :hover{ }では<span class="utn">カーソルは乗っているがクリックはされていない状態</span>。</span>
+
+<p class="kt" >
+  オンマウス時に{プロパティ名:値;}のようにするということ
+</p>
+<span class="aaa">
+リンク使用が多いがdiv、classでも利用できます</span>。IE6では不可。
+<p class="kt">
+親要素 子要素:hover{プロパティ名:値;}
+　親要素の中の<span class="utn">子要素だけ</span>、マウスオーバーされるとプロパティが変わる。</p>
+<h3>:before{content:}や:after{content:}</H3>
+
+<h2 id="giy">擬似要素</h2>
+1 個のコロン (:) が使われたり、2 個のコロン (::) が使用されたりする。
+<br>
+要素の一部に対して影響を与える事ができるのが擬似要素。
+<h3>:before :after</h3>
+<p class="kt">
+要素（divタグなど）の前後にテキストやアイコンを挿入することができる。
+</p>
+中身を指定するcontentプロパティの指定が必要です。
+<h3>:first-line</h3>
+<p class="kt" >
+pやhなどブロック要素の<span class="utn">最初の行に</span>色や大きさなどスタイルを適用します。インライン要素には適用できない。
+</p>
+<p class="kt" >
+要素:first-line {
+  プロパティ: 値;
+}
+</p>
+ <h3>:first-letter</h3>
+ <p class="kt fir" >
+   ブロック要素の<span class="utn">最初の文字に</span>色や大きさなどのスタイルを適用します。
+ </p>
+ <span class="dai">
+ ブロック要素:first-letter{
+   プロパティ: 値;
+  }
+  </span>
+<p class="kt" >
+  <span class="sample">
+  クラスに適用
+</span>　要素に.ドットとクラス名を付ける。　
+  要素.クラス名:first-letter {太さや色など適用したいスタイル}
+</p>
+<span class="orj">外部リンク参考サイトさん</span>
+  <a href="https://sabasaba-club.com/contents/1711/" target="_blank">擬似要素</a>
+  <P align="center"><IMG src="../pcjoshi.png" ></P>
+<a href="#top">
+<img src="../icon/button.png" class="tp">
+</a>
+<HR color="white"ize="5"><HR color="blue">
+</body>
+</html>

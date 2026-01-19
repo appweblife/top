@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <title>いろいろなCSSレイアウトの方法</title>
+    <LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+
+    <meta charset="utf-8">
+    <meta name="description" content="flexboxやfloat,position,display,配置などの様々なCSSのレイアウトについて記載しています。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name=”author” content=”koma”>
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+
+    <h1 id="top">CSSレイアウト<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80" class="tpg"></h1>
+
+    <ul>
+        <li class="pn"><a href="../index.html" target="_blank">web・アプリさくせい
+            </a> &gt;</li>
+        <li class="pn">CSSレイアウト</li>
+    </ul>
+    <P class="ch">
+        <script type="text/javascript">
+            < !--
+
+            var weeks = new Array('日', '月', '火', '水', '木', '金', '土');
+
+            var lastup = new Date(document.lastModified);
+
+            var year = lastup.getFullYear(); // 年
+            var month = lastup.getMonth() + 1; // 月
+            var day = lastup.getDate(); // 日
+            var week = weeks[lastup.getDay()]; // 曜日
+
+
+
+            // 表示開始
+            document.write('更新日：' + year + '年' + month + '月' + day + '日');
+            // 表示終了
+
+            // -->
+
+        </script>
+    </P>
+    <h2 style="clear:both;">目次</h2>
+    <div class="flco">
+        <A href="#htb">
+            <div class="flei">
+                幅と高さ
+                <br>
+                (width、height
+                <br>
+                など)のとこへ
+                <br>
+                <IMG src="../nai-link.gif">
+            </div>
+        </A>
+        <A href="#fle">
+            <div class="flei">
+                flexbox
+                <br>
+                のとこへ
+                <br>
+                <IMG src="../nai-link.gif">
+            </div>
+        </a>
+        <A href="#posi">
+            <div class="flei">
+                css position
+                <br>
+                プロパティ
+                <br>
+                のとこへ
+                <br>
+                <IMG src="../nai-link.gif">
+            </div>
+        </A>
+        <A href="#cdis">
+            <div class="flei">
+                css display
+                <br>
+                のとこへ
+                <br>
+                <IMG src="../nai-link.gif">
+            </div>
+        </A>
+        <A href="#flt">
+            <div class="flei">
+                css float
+                <br>
+                のとこへ
+                <br>
+                <IMG src="../nai-link.gif">
+            </div>
+        </A>
+        <A href="#align">
+            <div class="flei">
+                text-align（横の位置）,
+                <br>
+                vertical-align（縦の位置）
+                <br>
+                のとこへ
+                <IMG src="../nai-link.gif">
+            </div>
+        </A>
+
+    </div>
+    <h2 style="clear:both;">レイアウトのきそ</h2>
+    <h3>シングルカラム</h3>
+    <p class="kt fir">
+        左右にサイドバーがないページ。スマホでもタブレット、PCでも閲覧しやすい
+    </p>
+    <h3>マルチカラム</h3>
+    <p class="kt fir">
+        カラムは画面を縦分割したときの単位。「列」。
+    </p>
+    <b>縦のカラム（列）</b>に対して、画面を横分割したときの単位はロー（行）といいます。
+    <p>
+        <span class="orj">外部リンク参考サイトさん</span>
+        <a href="http://www.tagindex.com/template/layout/index.html" target="_blank">マルチカラム
+        </a>
+    </p>
+    <h3>２カラム</h3>
+    <p class="kt fir">
+        情報量の多いサイトの場合、適しているのが2カラムで、一番利用されているレイアウト
+    </p>
+    <p class="kt fir">
+        「メイン」と「サイドバー」というレイアウトが多い　flexboxかfloatで位置指定
+    </p>
+    親要素、子要素で作成。
+    <p>
+        <span class="orj">
+            外部リンク参考サイトさん
+        </span>
+        <a href="http://css.uka-p.com/2column/" target="_blank">２カラムつくりかた
+        </a>
+    </p>
+    <h3>３カラム</h3>
+    <p class="kt">
+        float: left;を続ける
+    </p>
+    <h3>カード型</h3>
+    ECサイトやコンテンツの多いWebサイトでよく使われる。<span class="aaa">レスポンシブに強い。</span>
+    <div class="cc">
+        <span class="dai">つくりかたのこつ</span>
+        <p class="kt fir">
+            余白を多くとり、すっきりと見やすくする。リンク設定を分かりやすくする.
+        </p>
+        Flexboxを使う
+    </div>
+    <h2 id="htb">幅と高さ</h2>
+    <p class="kt">
+        div,id,class等の幅と高さ指定にはwidth, heightプロパティでpx ,%を使い指定します。
+        <br>
+        値をautoにすると自動的に調整されます。
+    </p>
+    <h3>widthとheight</h3>
+    それぞれ「ウィズ」と「ヘイト」と言います。
+    <p class="kt fir">
+        幅と高さ指定にはwidth, heightプロパティを使います。％ または、pxで指定する
+    </p>
+    画像やdivなどに使います。
+
+    <p class="kt">
+        セレクタ{width:数値または、%;height:数値または、%;}
+    </p>
+    <h3>min-width、max-widthプロパティ</h3>
+    <p class="kt fir">
+        幅の最小値、最大値を指定する
+    </p>
+    
+    スマホ表示などで、<span class="aaa">これ以上小さな表示にならないように</span>する。
+    <div class="cc">
+
+        <span class=sample>
+    
+        セレクタ{min-width: 数値px;}
+    </span>
+    <br>
+    <span class=sample>
+        セレクタ{max-width: 数値px;}
+    </span>
+</div>
+    <h3>min-heightとmax-height</h3>
+    <p class="kt fir">
+        高さの最小値、最大値を指定する
+    </p>
+    <div class="cc">
+
+    <span class="sample">
+        セレクタ{min-height: 数値px;}</span>
+    高さが数値より小さくならないようにする
+    <br>
+    <span class="sample">
+        セレクタ[max-height: 数値px;}</span>
+    高さが数値以上大きくならないようにする
+</div>
+    <h2>box-sizing</h2>
+    <p class="kt">
+    要素の幅、高さに”余白部分（padding）とborderを含めるのか”を指定します。
+    <br>
+    div等の親要素からはみ出るときや線がはみ出る時に使用します
+</p>
+    <div class="cc">
+
+        <span class=sample>box-sizing:content-box;</span>
+    初期値　幅・高さに余白やボーダーを含めない
+    <br>
+    <span class=sample> box-sizing:border-box;</span>
+    横幅・高さに余白(padding)やボーダーを含める
+    
+</div>
+    <h2>overflow</h2>
+    <p class="kt fir">
+        はみ出た部分の表示方法を指定する
+    </p>
+    <p class="kt">
+        セレクタ {overflow:値;}
+    </p>
+    <div class="gibs">
+        <span class="skd">外部リンク参考サイトさん</span>
+        <a href="http://www.htmq.com/style/overflow.shtml" target="_blank">overflowについて
+        </a>
+    </div>
+    <h2 id="fle">flexboxフレックスボックス</h2>
+    <p class="kt fir">
+        CSS3から使用できるレイアウトを簡単に設定できる機能のこと。フレキシブルボックスとも呼びます。
+    </p>
+    <p class="sty">
+        <span class="aaa">横並び、上下左右位置ぞろえが簡単。複数行にわたる配置も設定できます。</span>
+    </p>
+    <span class=orj>外部リンク参考サイトさん</span>
+    <a href="https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet" target="_blank">flexboxのやりかた
+    </a>　 <a href="https://webdesign-trends.net/entry/8148" target="_blank">flexboxのやりかた2　
+    </a>　
+
+    <h3>仕組み</h3>
+    <p class="kt">
+        親要素の中に子要素を作成し制作します。
+    </p>
+    <p>
+        <span class=sample>Flex コンテナ</span>　<span class="aaa">親要素</span>になります。
+        {display: flex;}をcssで設定します。
+    </p>
+    <span class=sample>Flexアイテム</span>　<span class="aaa">子要素</span>となります。
+
+    <h3>書き方</h3>
+    htmlファイルではdivなどにclass属性で親要素と子要素をそれぞれ記述します。
+    <p class="kt fir">
+        cssで親要素の「displayプロパティ」の値に「flex」を指定すると、子要素が自動的に並列になります。
+        <br>
+        <span class=sample> 親要素{display:flex;}
+    </p>
+    <p class="kt">
+        子要素の幅やmargin、padding等は子要素のプロパティで設定する。
+    </p>
+
+
+    <div class="cc">
+        <span class=dai>
+            flex-wrapプロパティ</span>
+        <p class="kt fir">
+            Flexアイテム（子要素）を折り返したり、複数行に並べます。<span class="aaa">親要素に指定</span>します。
+        </p>
+        <span class=sample>
+            wrap</span>　 子要素を折り返し、複数行にします
+        <p class="kt">
+            .親要素 {flex-wrap: wrap;}</span>　
+        </p>
+        <span class=sample>
+            nowrap</span>　子要素を折り返しせず、一行に並べる（初期値）
+    </div>
+    <div class="cc">
+        <span class=dai>
+            justify-content</span>
+        <p class="kt fir">
+            左右水平方向のの位置指定。親要素のプロパティで設定します。
+        </p>
+        <b>justify-content:flex-start;</b>
+        　左揃え（初期値）
+        <p class="sty">
+            <b>justify-content:space-between;</b>　均等にスペースを開けて配置します。<span class="aaa">２つだとページ両端に配置になります</span>。
+        </p>
+        <p class="sty">
+            <b>
+                justify-content:space-around;</b>　
+            均等にスペースを開けて配置します。両端にもスペースができます。
+        </p>
+        <p class="sty">
+            <b>
+                justify-content:center;</b>　中央揃え
+        </p>
+        <span class=orj>外部リンク参考サイトさん</span>
+        <a href="http://www.htmq.com/css3/justify-content.shtml" target="_blank">
+            justify-contentの値について
+        </a>
+    </div>
+    <div class="cc">
+        <span class=dai>
+            align-items</span>
+        <p class="kt fir">
+            上下の位置指定
+        </p>
+    </div>
+    <div class="cc">
+        <span class=dai>
+            flex-basisプロパティ</span>子要素の幅を指定し、その幅で揃えられます。値は「数値と単位」か「％」になります。
+        <p class="kt">
+            .子要素{ flex-basis:幅の数値; }
+        </p>
+    </div>
+    <h2>CSSグリッド</h2>
+    <h2 id="posi">positionプロパティ</h2>
+    <span class="aaa">positionプロパティの値にはstatic;、relative;、absolute;、fixed;の中からひとつ入力。</span>
+
+    　static初期値、特に配置方法を指定しない。
+    <p class="kt fir">
+        位置の数値単位はpx、%が多い
+    </p>
+    <div class="cc">
+        <span class="dai">
+            fixed
+        </span>
+        画面をスクロールしてもその<span class="aaa">要素の場所は固定されます。</span>
+        位置の基準は親要素ではなく<span class="aaa">「ウィンドウ全体」</span>です。
+        <br>
+        top: 0と指定したら画面の最上部に表示されます。
+        <p class="kt">
+            セレクタ{
+            position: fixed;
+            位置
+            }
+        </p>
+    </div>
+    <div class="cc">
+        <span class="dai">
+            relativeとabsoluteの組み合わせ
+        </span>
+
+        <p class="kt fir">
+            親要素（元になる、重ねる場所）はposition: relative;、重ねるものはposition: absolute;
+            <br>
+            absoluteを使用するときにrelativeを指定しなければ、親要素はbodyになります。
+        </p>
+        <p>
+            表示する位置は、<span class="im">position: absolute;</span>にて、
+            <br>
+            <span class="aaa"> top:数値px;（上からの距離）、bottom:数値px;（下からの距離）、left:数値px;（左からの距離）、right:数値px;（右からの距離）
+                <br>
+                にて設定</span>
+        </p>
+        <span class="orj">
+            外部リンク参考サイトさん
+        </span>
+        <a href="http://javatechnology.net/other/css-position-absolute/" target="_blank">
+            position: absolute;と relative;の組み合わせ方（重ねて表示）</a>
+    </div>
+    <div class="cc">
+        <span class="dai">
+            relative,absoluteの<span class="utn">それぞれの個別使用</span>
+        </span>
+
+        <p class="kt">
+            position: relative;、position: absolute;は、組み合わせなくても<span class="aaa">それぞれ個別に使用することができます。</span>
+        </p>
+        <p class="kt">
+            表示する位置は、top:数値px;（上部からの距離）、bottom:数値px;（下部からの距離）、left:数値px;（左からの距離）<br>right:数値px;（右からの距離）を使います
+        </p>
+        <span class="sample">
+            position: relative;
+        </span>　<span class="aaa">現在の位置から動かしたいとき</span>に使います。
+        <p class="kt sty">
+            {
+            position:relative;
+            top:数値px;
+            left:数値px;
+            }
+        </p>
+
+        <span class="sample">
+            position: absolute;
+        </span>　<span class="aaa">親要素（親要素はbodyになります）の左上が基準となり、そこから動かすこと</span>になります。
+        <p class="kt">
+            {
+            position:absolute;
+            top:数値px;
+            left:数値px;
+            }
+        </p>
+        <span class="orj">
+            外部リンク参考サイトさん
+        </span>
+        <a href="https://www.yuu-diaryblog.com/2016/11/11/position/" target="_blank">position: relativeとabsoluteの使い方</a>
+    </div>
+    <BR>
+    <div class="cc">
+        <p>
+            <span class="dai">z-index</span>
+
+            要素の<span class="aaa">重なりの順序を指定するプロパティ。</span>
+        <p class="kt">
+            z-indexプロパティを指定した要素は、数字が小さいほど奥へ、大きいほど手前に表示されます。
+            　z-index:数値;</p>
+
+        この指定は、<span class="aaa">positionプロパティで relative、absolute、fixed を指定している場合に有効</span>。
+        </p>
+    </div>
+    <h2 id="cdis">displayプロパティ</h2>
+    <p class="kt fir">displayは、要素をブロック要素かインライン要素にするプロパティ。
+        値は、blockやinline、inline-blockが一般的　
+    </p>
+    <span class="orj">
+        外部リンク参考サイトさん
+    </span>
+    <a href="http://saruwakakun.com/html-css/basic/display" target="_blank">display使い方
+    </a>　
+
+    <BR>
+    <div class="cc">
+        <span class="dai">{display:block;}</span>
+
+        縦に並んでいく。<span class="aaa">widthとheight、marginとpaddingを付けることができます。</span>
+        <p class="kt">
+            {margin: 0 auto;}にすると水平方向に中央寄せになります
+        </p>
+    </div>
+    <div class="cc">
+        <span class="dai">{display:inline-block;}</span>
+
+        横に並んでいく。
+        <p class="kt">
+            width（幅）、height（高さ）を付けることができる。marginとpaddingも付けることができます
+        </p>
+    </div>
+
+    <div class="cc">
+        <span class="dai"> {display: inline;} </span>
+
+        <span class="aaa">リストを横並びにする.</span>
+        インライン要素span
+        <p class="kt">
+            widthとheightを付けれません。marginとpaddingは上下付けれません、左右だけ付けれます。
+        </p>
+    </div>
+    <div class="cc">
+        <span class="dai">{display:none;}</span>
+
+        要素の表示を非表示にします。
+        要素の子要素全てが非表示になります。
+    </div>
+
+    <div class="cc">
+        <span class="dai">{display:table;}　{display:table-cell;}</span>
+        親要素にdisplay:table;を指定し、子要素（横並びにしたい要素）をdisplay:table-cell;にして、幅や色、高さなどを指定する　
+        <p class="kt">
+            親要素をul,子要素をliとして使うことが多い
+            IE7以下は使えません。　
+        </p>
+    </div>
+
+    <h2 id="flt">float</h2>
+    <p class="kt fir">
+        画像などの要素を左（left）または右（right）に配置するCSSプロパティ。<span class="aaa">次の要素が配置されます</span>。
+    </p>
+    <p class="kt">
+        主にdivなどboxの要素にfloatプロパティで左右配置を指定する。cssに記述しdivなどhtmlの要素にclassでつける。
+    </p>
+    <table border="2">
+        <tr>
+            <td><b>float:left;</b></td>
+            <td>左に寄せる。</td>
+        </tr>
+        <tr>
+            <td><b> float:right;　</b></td>
+            <td>右に寄せる。</td>
+        </tr>
+        <tr>
+            <td><b> clear:both;　</b></td>
+            <td>回りこみを解除する。<b>解除する時はclearを使う</b></td>
+        </tr>
+    </table>
+    <p>
+        <span class="sample">
+            周囲の余白</span>　<b>marginプロパティ</b>を使う。<span class="aaa">margin-rightで右側に余白ができる　{margin-right: 数値px;}</span>
+    </p>
+    <p>
+        <span class="sample">
+            幅指定
+        </span><b>widthで、それぞれのかたまりの幅を指定する</b>　<span class="aaa">{width:数値%;}</span>
+    </p>
+    cssだけでなくHTMLだけでも使うことができる。　要素にstyle属性をつける
+    <div class="gibs">
+        <span class="orj">外部リンク参考サイトさん</span>
+        <a href="http://www.tagindex.com/stylesheet/box/float.html" target="_blank">・floatやりかた
+        </a>
+        　<a href="http://www.htmq.com/style/float.shtml" target="_blank">・HTMLでの使い方</a>
+    </div>
+    <div class="cc">
+        <span class="dai">解除</span>
+        <p class="kt">
+            cssプロパティの「clear」で解除する
+            <span class="aaa">floatを指定したら解除を忘れない</span>
+        </p>
+        <p class="sty">
+
+            回り込みを解除したい場所で<span class="aaa">divなどの要素につける</span>
+        </p>
+
+
+        <span class="orj">外部リンク参考サイトさん</span>
+        <a href="http://www.tagindex.com/stylesheet/box/clear.html" target="_blank">回り込み解除</a>
+    </div>
+
+    <h2>配置</h2>
+    <h3>中央配置</h3>
+    <span class="sample">
+        text-align: center;
+    </span>
+    <p>
+        <span class="sample">
+            セレクタ{margin: 0 auto;}
+        </span>　<span class="aaa">ブロック要素を水平方向に中央寄せします。上下にはできません。セレクタの幅、widthの指定が必須</span>
+    </p>
+    <span class="sample">
+        display: inline-block;
+    </span>
+    <h3 id="align">横位置（text-alignプロパティ）</h3>
+    <p class="kt">
+        text-alignプロパティは、<span class="utn">文字や画像の横の揃え方を指定する</span>プロパティです。「テキスト・アライン」と読みます。
+    </p>
+    h1,2などの<span class="aaa">見出しにも使えます。</span>
+    <br>
+    <span class="aaa">基本的にはテキストに対する指定になり,divなどのブロック要素やテーブルなどの全体の配置を移動する事はできません。</span>
+    <p class="sty">
+        ブロック要素の配置を指定したい場合は「margin:0 auto;」「float」「position」などを使いましょう。
+    </p>
+    <table border="2">
+        <tr>
+            <td>
+                {text-align:left;}</td>
+            <td>　左揃え</td>
+        </tr>
+        <tr>
+            <td>
+                {text-align:right;}</td>
+            <td>　右揃え</td>
+        </tr>
+        <tr>
+            <td>{text-align: center;}</td>
+            <td>　中央ぞろえ</td>
+        </tr>
+        <tr>
+            <td> {text-align: justify;}</td>
+            <td>　均等割付</td>
+        </tr>
+    </table>
+    <h3>縦位置（vertical-alignプロパティ〉</h3>
+    <p class="kt">
+        縦位置の揃え方を指定。 <a href="http://weblan3.com/css/vertical-align" target="_blank">vertical-alignプロパティ使い方
+        </a>
+    </p>
+    <p class="kt">
+        インライン要素とtableのセル要素の<span class="utn">縦位置の揃え方を指定</span>出来ます。
+        <br>
+        ブロック要素にはできません。<span class="aaa">見出し要素（h1, h2, h3など）やp、ul、li、divなどには使用できません。</span>
+    </p>
+    <table border="2">
+        <tr>
+            <td>
+                vertical-align: top;</td>
+            <td>　上端揃え　</td>
+        </tr>
+        <tr>
+            <td>
+                vertical-align: middle;</td>
+            <td>　中央揃え　</td>
+        </tr>
+        <tr>
+            <td>vertical-align: bottom;</td>
+            <td>　下端揃え　</td>
+        </tr>
+    </table>
+    <h2>サイトマップ</H2>
+    <p class="kt fir">
+        サイト全体のページ構成、内容を一覧表示したもので、ユーザーにも<span class="aaa">
+            検索エンジンにも</span>サイトの内容をわかりやすく伝える役割をします。
+        <br>
+        HTMLサイトマップとXMLサイトマップの2種類があります。
+    </p>
+    <span class="sample">
+        XMLサイトマップ
+    </span>
+    検索エンジンにサイト内ページをもれなく通知するために設置する
+
+    <h2>フレームワーク</h2>
+    <h3>bootstrap</H3>
+    Twitter社が開発した<span class="aaa">スマートフォンなどにも対応し、レスポンシブデザインを採用したHTML, CSS, JavaScriptのフレームワーク</span>
+    <br>
+    有料、無料いろいろなテンプレートがある
+    <p>
+        <span class="orj">外部リンク参考サイトさん</span>
+        <a href="http://photoshopvip.net/92860" target="_blank">bootstrap無料テンプレート</a>
+    </p>
+    <a href="#top">
+        <!aタグでアイコンを囲む>
+            <img src="../icon/button.png" class="tp">
+    </a>
+    <P align="center">
+        <IMG src="../pcjoshi.png" alt="楽しくpc">
+    </P>
+
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<html>
+<head>
+  <title>CSSきほん</title>
+  <LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+    <meta charset="utf-8">
+<meta name="description" content="CSSの基本について">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name=”author” content=”komai”>
+</head>
+
+<body>
+<header>
+  <h1>CSSきほん<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+
+</header>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1S5ZLCQ35K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1S5ZLCQ35K');
+</script>
+
+<p class="ch">
+  <script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getFullYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日（' + week + '）');
+// 表示終了
+
+// -->
+</script>
+</P>
+<ul>
+<li class="pn"><a href="../index.html"target="_blank">web・アプリさくせい</a> &gt;</li>
+<li class="pn">CSSきほん</li>
+</ul>
+<h3>目次</h3>
+<div class="flco">
+<A href="#class-id">
+    <div class="flei">
+        CSS
+        <br>
+        classとid
+        <br>
+        <img src="../nai-link.gif">
+    </div>
+</A><A href="#div-span">
+    <div class="flei">
+        CSS
+        <br>
+        divとspan
+        <br>
+        <img src="../nai-link.gif">
+    </div>
+</A>
+</div>
+<h3 id="ckhn">cssのきほん</h3>
+        <ul class="yohaku-dai1">
+            <li><span class="aaa">htmlファイルの&lt;head&gt;と&lt;/head&gt;の間に&lt;link rel="stylesheet" href="cssファイル名" type="text/css"&gt;&lt;/style&gt;と書きます。</span></li>
+
+            <li>cssはhtmlの要素に色や大きさ、レイアウトを指定できます</li>
+            <li> htmlには、それぞれ適用する要素に、<span class="aaa">cssには色や大きさなど適用する内容</span>をそれぞれ記述します。</li>
+            <li>HTMLファイルとは別に作成し、ファイル名は「～.css」として保存します。
+        </ul>
+       
+
+            <span class="dai">
+                CSSの書き方
+            </span>
+            <p class="kt">
+                セレクタ{プロパティ:値 ;}
+            </p>
+
+           
+            <ul>
+                <li> <span class="sample">セレクタ</span>　cssの指示を適用させる<b>範囲や要素</b>（Hやid、class）</li>
+                <br>
+                <li> <span class="sample">プロパティ</span>　（float,marginなど配置する、余白をあける等）<span class="aaa">やること。</span></li>
+                <br>
+                <li><span class="sample">値</span> 色や大きさなどプロパティの設定する<b>値</b>。数値や%など</li>
+            </ul>
+            
+        <div class="cc">
+            <ul class="yohakudai">
+            <li>  プロパティと値（色や大きさとか）の間は<b>「:（コロン）」で区切る</b>。
+                <br>
+                <span class="sample">太字の場合</span>   font-weight: bold;
+            
+            </li>
+        
+        <li> 色と大きさとか<b>２つ以上指定するときには「;（セミコロン）」で区切る</b>。
+            <br>
+            <span class="sample">太字で文字サイズ大の場合</span> font-weight: bold;
+            font-size: x-large;
+    </li>
+</ul>
+<span class="sample">H1を中央配置、フォントサイズ34PX,太字に設定した場合</span>
+<br>
+H1 {
+               
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+}
+    </div>
+        <p class="kt">
+            <span class="sample">コメント</span>
+            /* */ で囲んだ範囲はコメントとなり、テキストエディタ内だけでの表示になります。
+        </p>
+        <span class="orj">外部リンク参考サイトさん</span>
+        <a href="http://honttoni.blog74.fc2.com/" target="_blank">新しく詳しいサイトさん</a>
+        <h3 id="class-id">CSS、IDとクラス</h3>
+        <p class="kt">
+            CSSファイルに、id属性は「#」(シャープ)。　class属性は「.」(ドット)と記載。 <span class="aaa">「id属性」はWebページ上に同じ「id名」を一つしか使えない</SPAN>
+        </P>
+        <span class="sample">名前に使用できる文字列</span>　アルファベット、数字、「-」(ハイフン)、「_」(アンダースコア)です。ただし、先頭に数字または「-」は使えません。
+        <BR>
+       
+        
+            <span class=dai>クラス</span>
+            <p>
+                <B>「.」(ドット)の後にクラス名を記述</B>　クラス名をつけたセレクタを「クラスセレクタ」と呼びます。
+            </p>
+            <ul class="yohaku nsi">
+                <li>
+                    <span class="sample">CSS側</span>　<span class="aaa"><B>.クラス名{プロパティ:値 ;} </B></SPAN>
+                </li>
+                <li>
+                    <span class="sample">HTML側</span>　<B>&lt;要素 class="クラス名"&gt;</B>
+                </li>
+            </ul>
+            <div class="cc">
+                <span class=dai>複数のクラス</span>
+            <p>
+                HTMLの<span class="aaa">要素にclassを複数指定するには<B>半角スペースで区切り</B>、"　"で囲みます。</span>
+            </p>
+            <p class="kt">
+                &lt;要素 class=”aaa bbb“&gt;
+            </p>
+            <p class="kt">
+            同じHTML要素にidとclass両方つけることも可能です
+            &lt;div id="aaa" class="bbb"&gt;
+
+        </p>
+            <span class="orj">外部リンク参考サイトさん</span>　
+            <a href="http://wp-p.info/tpl_rep.php?cat=css-biginner&fl=r10" target="_blank">いろいろな適用</a>
+        </DIV>
+
+        <h3 id="div-span">css　divとspan　</h3>
+       
+            <span class="dai">DIV</span>
+            <p class="kt">
+            DIVとは箱のようなもの。<span class="aaa">divタグにidやclassをつけてdivタグ内に色などスタイルを適用</SPAN>する。
+                <br>
+                &lt;div class="aaa"&gt;  &lt;/div&gt;
+            </p>
+           <a href="css-layout.html#htb" target="_blank">divの幅、高さなどの設定<IMG src="../nai-link.gif"></a>
+                <div class="cc">
+                    <span class="dai">divの配置</span>
+                    floatプロパティやdisplayプロパティ、positionプロパティ等で左右など位置を設定できます
+                    <p>
+                    <span class="sample">floatプロパティ</span>
+                <B> float : left (左へ回り込む)　　float : right （右へ回り込む）</B>
+            </p>
+            <a href="css-layout.html" target="_blank">
+                
+                    CSSレイアウト
+                    
+                    (flexbox、
+                    
+                    display、positionなど)
+                   
+                    のページへ<IMG src="../nai-link.gif">
+               
+            </A>
+        </div>
+
+       
+            <span class="dai">SPAN</span>
+            <p class="kt">
+                　idやclassをつけて、文中の特定のテキストだけ色や書体を変えたい時などに使います。</span>
+                <br>
+            &lt;span class="aaa"&gt;テキスト&lt;/span&gt;
+        </p>
+
+           
+        <p>
+            span要素は<span class="aaa">インライン要素であり前後が改行されることはなく</span>、ブロックにはなりません。
+        </p>
+
+<a href="#top"><!aタグでアイコンを囲む>
+<img src="../icon/button.png" class="tp">
+</a>
+<P align="center"><IMG src="../pcjoshi.png"alt="楽しくpc" >
+</P>
+
+</body>
+</html>

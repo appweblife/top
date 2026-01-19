@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<title>css背景-web・アプリさくせい　気楽にチャレンジ・いろいろ確認！</title>
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+  <meta charset="utf-8">
+  <meta name="description" content="背景画像やグラデーションの設定など">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name=”author” content=”koma”>
+</head>
+
+<body>
+<h1>css背景<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+<ul>
+<li class="pn"><a href="../index.html"target="_blank">web・アプリさくせい</a> &gt;</li>
+<li class="pn">css背景</li>
+</ul>
+<P class="ch">
+  <script type="text/javascript">
+<!--
+
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getFullYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+// 表示開始
+document.write('更新日：' + year + '年' + month + '月' + day + '日');
+// 表示終了
+
+// -->
+</script></P>
+<h2>css背景"画像"について
+</h2>
+
+
+  <span class="sample">backgroundプロパティ
+  </span>
+
+
+<p class="kt">
+  背景に画像を指定するには、「background-imageプロパティ」を使います。
+</p>
+  <p class="kt">
+    background-image:の後に<span class="aaa">urlという文字を記入し</span>、
+    その後ろのカッコ内に画像ファイルのアドレスを相対パスか絶対パス(http://〜)で指定
+  </p>
+    <p class="kt">
+  セレクタ  {background-image: url('画像ファイル名');}
+</p>
+<div class="cc" >
+  <span class="dai">背景全体を画像で覆う</span>
+<p class="kt">
+  background-sizeプロパティの値を「cover」にする。
+</p>
+  <p class="kt">
+    <span class="md">background-size: cover;</span>
+  </p>
+
+<B>background-size: cover;</B>の後に  <B>width:数値px;  height:数値px;</B>にて画像サイズ指定できる
+<br>
+ <span class="orj">外部リンク参考サイトさん
+<a href="http://tips.nishishi.com/css/background-size-css3.html" target="_blank">1枚で背景画像</a>
+</span>
+</div>
+<p>
+  <span class="sample">並列表示方法</span>　画像などを単に横に並べるだけであれば、
+  <b>Ｐ要素の中に改行なしでimg要素を複数並べるくらい</b>でできる
+  </P>
+    </span>
+     <span class="orj">外部リンク参考サイトさん
+    </span><a href="http://cc.musabi.ac.jp/kenkyu/cl1/html5/css_lay01.html" target="_blank">横並びについて</a>
+
+    <h2>グラデーション</h2>
+    <span class="aaa">background プロパティに linear-gradient（　）で色を指定します。（　）を忘れないように。</span>
+    <p class="kt" >
+    background:linear-gradient (カラー名,カラー名);
+  <br>
+  デフォルトでは上から下へのグラデーションになります。
+  </p>
+  <ul>
+  <p class="sty" >
+    <li><span class="sample">複数色の場合</span>　<span class="aaa">カンマで区切り、カラー名を書き足します</span>。</li>
+  <br>
+    <li><span class="sample">グラデーションする方向の指定</span>　toの後に半角スペースを入れてleft, rightや、top, bottom など</li>
+  <br>
+  <li><span class="sample">グラデーション位置指定</span>
+    カラー名の横に半角スペースを入れ「%」</li>
+    <br>
+  <li>  <span class="sample">グラデーション角度</span>
+      数値にdegをつける。</li>
+  <br>
+  <li>  <span class="sample">円形でのグラデーション</span>　<span class="aaa">background: radial-gradient(カラー名);</span></li>
+    </p>
+    <span class="orj">外部リンク参考サイトさん
+    </span>
+    <a href="https://saruwakakun.com/html-css/basic/linear-radial-gradient" target="_blank">グラデーションやりかた</a>
+
+
+
+  <a href="#top"><!aタグでアイコンを囲む>
+  <img src="../icon/button.png" class="tp">
+  </a>
+  <P align="center">
+    <IMG src="../pcjoshi.png"alt="楽しくpc" >
+    </P>
+</body>
+</html>
