@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+
+<title>atom edita</title>
+<LINK rel="stylesheet" href="../css-haikei.css" type="text/css">
+  <LINK rel="stylesheet" href="../jquery/flexslider.css" type="text/css">
+<! jQuery用のスタイルシートも加える>
+
+
+  <meta name="description" content="アトムエディタの設定や使いかた">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1S5ZLCQ35K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1S5ZLCQ35K');
+</script>
+
+<body>
+<header class="su">
+<h1>atom操作方法<img src="../pic/shigoto2m2.png" alt="pc操作中" width="80" height="80"class="tpg"></h1>
+  <nav class="fr">
+  <ul>
+  <li class="pn"><a href="../index.html"target="_blank">web制作・webライフ</a> &gt;</li>
+  <li class="pn">atom操作方法</li>
+  </ul>
+  </nav>
+<P class="ch">
+  <script type="text/javascript">
+var weeks = new Array('日','月','火','水','木','金','土');
+
+var lastup = new Date(document.lastModified);
+
+var year = lastup.getYear(); // 年
+var month = lastup.getMonth() + 1; // 月
+var day = lastup.getDate(); // 日
+var week = weeks[ lastup.getDay() ]; // 曜日
+
+
+if(year < 2000) { year += 1900; }
+
+
+
+// 表示開始
+document.write('更新日時：<b>' + year + '年' + month + '月' + day + '日（' + week + '）');
+// 表示終了
+// -->
+</script>
+</P></header>
+
+<h2>設定</h2>
+<a href="https://atom.io/"target="_blank">atom公式<IMG src="../banako.gif" ></a>
+
+<p class="kt">
+  &lt;meta charset="utf-8"&gt;をheadに入れる。
+</p>
+<div class="cc" >
+  <a href="http://creating-homepage.com/archives/786"target="_blank">行折り返し設定</a>　ソフトラップ
+  <BR>
+初期設定は、行の折り返しがされていません。
+<p class="kt">
+[ファイル]→[環境設定]「エディタ設定」「ソフトラップ」の項目をチェック
+</p>
+</div>
+<img src="pic/atom-Softwrap.png"alt="atomソフトラップ"width="75%"height="75%">
+
+<h2>パッケージ</h2>
+<h3>インストール＆設定</h3>
+<p>
+［ファイル］→［環境設定］→[インストール]
+<br>
+→検索枠にインストールしたいパッケージ名を入力。
+</p>
+<br>
+<img src="pic/atom-kankyou.jpg"alt="atom環境設定"width="75%"height="75%">
+<br>
+<img src="pic/atom-Package.png"alt="atomパッケージ"width="75%"height="75%">
+<h3>各パッケージ</h3>
+
+<span class=sample>atom-html-preview</span>
+  htmlをプレビュー画面で確認できる
+  <a href="http://creating-homepage.com/archives/1749"target="_blank">
+atom-html-previewインストール＆使い方</a>
+<p>
+  <span class=sample>日本語化</span>
+アトムの日本語化　<a href="https://qiita.com/akikimur/items/bc342db92dbeb801ee61"target="_blank">日本語化のやり方
+</a>
+</p>
+
+<p>
+  <span class=sample>pigments</span>
+エディタ上で実際に入力してあるカラーコードの色を表示する<BR>
+</p>
+<p>
+<span class=sample>Color Picker</span>
+エディタ上で右クリックして、カラーピッカーを表示し挿入したい色を選択しカラーコードを挿入する
+</p>
+<p>
+  <span class=sample>Emmet</span>
+  HTMLやCSSなどを入力補完機能により簡単に入力できるプラグイン。
+</p>
+<p>
+  <span class=sample>show-ideographic-space</span>
+  小さい正方形にて全角スペースを表示。
+</p>
+<h2>ショートカット</h2>
+<div class="float-left">
+<dl>
+<dt><span class=sample>（Ctrl+Z）</span></dt> <dd>元に戻す</dd>
+<BR>
+<DT><span class=sample>[Ctl]+[Alt]+[.]</span></DT> <dd> 閉じタグ（パッケージインストール済み時）</dd>
+<BR>
+ <DT>	<span class=sample>End （テンキーのところ）</span></DT>	<dd>カーソルのある行末へ移動</dd>
+ <BR>
+<DT><span class=sample>Shift + End</span> </DT> 	<dd>カーソル位置から行末までを選択</dd>
+</dl>
+</div>
+<dl>
+<DT>	<span class=sample>Ctrl + Home（テンキーのところ）</span></DT>	<dd>ページ最初の行へ移動</dd>
+<BR>
+  <DT>	<span class=sample>Ctrl + End （テンキーのところ）</span></DT>	<dd>ページ最後の行へ移動</dd>
+  <BR>
+    <DT>	<span class=sample>Ctrl + k押した後、分割したい方向矢印</span></DT>	<dd>画面分割</dd>
+</dt>
+
+<!--フロート解除-->
+<div class="cl">
+  <span class="orj">外部リンク参考サイトさん</span>
+  <a href="http://pasolavo.com/web/atom-keybinding-for-windows.html"target="_blank">ショートカット</a>
+
+<h2>用語</h2>
+    <span class=sample>ペイン</span>　編集画面のこと
+  <BR>
+<div class="cc" >
+  <span class=dai>キーバインド</span>キーボードの個々のキーへの記号や機能の割り当て。
+<br>
+  どのキーを押すと何が入力・指示されるかを定めた設定のこと。
+  <BR>
+    「F1」「F2」などのファンクションキーは特定の動作が決まっていないため、ソフトウェアによって必要な機能がそれぞれ割り当てられていることが多い。
+</div>
+
+<h2>エラーなど</h2>
+<span class=sample>Key Binding Resolverの非表示</span>
+<B>Ctrl+. (ピリオド)</B>
+<P align="center">
+  <IMG src="../pcjoshi.png"alt="楽しくpc" >
+</P>
+<a href="#top">
+<img src="../icon/button.png" class="tp">
+</a>
+
+
+    </body>
+    </html>
